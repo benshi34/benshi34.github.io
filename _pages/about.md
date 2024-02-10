@@ -6,7 +6,7 @@ subtitle: <a href='princeton.edu'>Senior at Princeton University</a> studying Co
 
 profile:
   align: right
-  image: prof_pic.jpeg
+  image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
 
 news: true # includes a list of news items
