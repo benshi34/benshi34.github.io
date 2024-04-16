@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='princeton.edu'>Senior at Princeton University</a> studying Computer Science
+subtitle: <a href=''>Senior at Princeton University</a> studying Computer Science
 
 profile:
   align: right
