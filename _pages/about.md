@@ -11,17 +11,15 @@ profile:
 
 news: true # includes a list of news items
 latest_posts: false # includes a list of the newest posts
-selected_papers: false # includes a list of papers marked as "selected={true}"
+selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-Hi, my name is Ben, and I'm a senior at Princeton University studying Computer Science. I am fortunate to be advised by Professor Narasimhan, working with PhD candidates [Vishvak Murihari](https://www.vishvakmurahari.com/) and [Shunyu Yao](https://ysymyth.github.io/).
+Hi, my name is Ben! I'm originally from Changsha, China, and moved to West Virginia in the 5th grade. I am fortunate to be advised by Professor [Karthik Narasimhan](https://www.cs.princeton.edu/~karthikn/), as well as [Shunyu Yao](https://ysymyth.github.io/). Previously I was a SWE Intern at Meta.
 
 Currently I'm interested in demystifying and improving reasoning capabilities of AI, through mediums such as logic puzzles and coding domains. I'm also broadly interested in understanding knowledge storage in LLMs, and its interaction with contextual knowledge in multi-task settings. 
 
-I love making and critiquing music. So much so that I built a generative AI [pop music composition tool](), deployment in progress. Also check out my [Spotify](https://open.spotify.com/album/4KsS5vBRtowHg6ATcBpoSG?si=pN8NPmWcSDWvuumXRXqyTg) where I post some interesting creations!
-
-Always happy to chat about anything. 
+In my free time I love making and critiquing music. So much so that I built a generative AI [pop music composition tool](), deployment in progress. Also check out my [Spotify](https://open.spotify.com/album/4KsS5vBRtowHg6ATcBpoSG?si=pN8NPmWcSDWvuumXRXqyTg) where I post some interesting creations!
 
 <!-- Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
 
