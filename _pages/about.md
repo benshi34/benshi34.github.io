@@ -15,7 +15,7 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-Hi, my name is Ben, and I'm a recent graduate of Princeton University where I received my undergraduate degree in computer science. I'm originally from Changsha, China, and moved to West Virginia in the 5th grade. I am fortunate to be advised by Professor [Karthik Narasimhan](https://www.cs.princeton.edu/~karthikn/), as well as Dr.[Shunyu Yao](https://ysymyth.github.io/). Previously I was a SWE Intern at Meta.
+Hi, my name is Ben, and I'm a recent graduate of Princeton University where I received my undergraduate degree in computer science. I'm originally from Changsha, China, and moved to West Virginia in the 5th grade. I am fortunate to be advised by Professor [Karthik Narasimhan](https://www.cs.princeton.edu/~karthikn/), as well as Dr. [Shunyu Yao](https://ysymyth.github.io/). Previously I was a SWE Intern at Meta.
 
 I'm broadly interested in **demystifying and improving reasoning capabilities of AI**, through mediums such as logic puzzles and coding domains. Currently very excited + optimistic about **reasoning based retrieval** for difficult coding domains. I'm also interested in understanding knowledge storage in LLMs, and its interaction with contextual knowledge in multi-task settings. 
 
