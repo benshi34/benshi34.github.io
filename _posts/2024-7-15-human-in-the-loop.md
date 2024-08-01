@@ -2,7 +2,7 @@
 layout: distill
 title: Guiding LLMs in Competitive Programming
 description: When does it go wrong?
-giscus_comments: true
+giscus_comments: false
 date: 2024-07-30
 featured: false
 
