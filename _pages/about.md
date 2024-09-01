@@ -15,9 +15,9 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-Hi, my name is Ben, and I'm a recent graduate of Princeton University where I received my undergraduate degree in computer science. I'm originally from Changsha, China, and moved to West Virginia in the 5th grade. I am fortunate to be advised by Professor [Karthik Narasimhan](https://www.cs.princeton.edu/~karthikn/), as well as Dr. [Shunyu Yao](https://ysymyth.github.io/). Previously I was a SWE Intern at Meta.
+Hi, my name is Ben, and I'm a recent graduate of Princeton University where I received my undergraduate degree in computer science. I'm originally from Changsha, China, and moved to West Virginia in the 5th grade. I am fortunate to be advised by Professor [Karthik Narasimhan](https://www.cs.princeton.edu/~karthikn/), as well as Dr. [Shunyu Yao](https://ysymyth.github.io/). Previous I was an intern at Meta.
 
-I'm broadly interested in **demystifying and improving reasoning capabilities of AI**, through mediums such as logic puzzles and coding domains. Currently very excited + optimistic about **reasoning based retrieval** for difficult coding domains. I'm also interested in understanding knowledge storage in LLMs, and its interaction with contextual knowledge in multi-task settings. 
+I'm broadly interested in **demystifying and improving reasoning capabilities of AI**, through mediums such as logic puzzles and coding questions. Currently very excited + optimistic about utilizing **reasoning based retrieval** for difficult code tasks.
 
 My undergraduate thesis was on analyzing and improving LLM performance on competitive programming, where I received the Sigma Xi Book award for outstanding undergraduate research and publication record.
 
@@ -26,7 +26,7 @@ Currently I'm working on:
 
 * More advances to [LLMs in competitive programming](https://princeton-nlp.github.io/USACOBench/).
 
-In my free time I love making and critiquing music. So much so that I built a generative AI [pop music composition tool](), deployment in progress. Also check out my [Spotify](https://open.spotify.com/album/4KsS5vBRtowHg6ATcBpoSG?si=pN8NPmWcSDWvuumXRXqyTg) where I post some interesting creations!
+In my free time I love making and critiquing music. So much so that I built a generative AI [pop music composition tool](). I also love to produce music + [sing](https://open.spotify.com/album/4KsS5vBRtowHg6ATcBpoSG?si=pN8NPmWcSDWvuumXRXqyTg).
 
 Feel free to contact me at [x]@princeton.edu, where [x] = benshi.
 
