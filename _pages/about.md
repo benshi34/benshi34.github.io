@@ -21,7 +21,7 @@ I'm broadly interested in **demystifying and improving reasoning capabilities of
 
 My undergraduate thesis was on analyzing and improving LLM performance on competitive programming, where I received the Sigma Xi Book award for outstanding undergraduate research and publication record.
 
-In my free time I love making and critiquing music. So much so that I built a generative AI [pop music composition tool](). I also love to [produce music + sing](https://open.spotify.com/album/4KsS5vBRtowHg6ATcBpoSG?si=pN8NPmWcSDWvuumXRXqyTg).
+In my free time I love making and critiquing music. So much so that I built a generative AI [pop music composition tool](). I also love to produce music + sing.
 
 Feel free to contact me at [x]@princeton.edu, where [x] = benshi.
 
