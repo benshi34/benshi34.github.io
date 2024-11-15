@@ -17,7 +17,7 @@ social: true # includes social icons at the bottom of the page
 
 Hi, my name is Ben, and I'm a recent graduate of Princeton University where I received my undergraduate degree in computer science. I'm originally from Changsha, China, and moved to West Virginia in the 5th grade. I am fortunate to be advised by Professor [Karthik Narasimhan](https://www.cs.princeton.edu/~karthikn/), as well as Dr. [Shunyu Yao](https://ysymyth.github.io/). Previous I was an intern at Meta.
 
-Nowadays, I'm particularly interested in improving Human-AI collaboration in reasoning environments, briding the gap between human intent and model capability. I'm also interested in building tools for agents to enhance collaboration. I am particularly excited about reasoning-based retrieval for future tool development. Evals are also a big part of this: there needs to be more utility-based evals that return transferrable signals to downstream tasks. For both humans and AI alike!
+Nowadays, I'm particularly interested in **improving Human-AI collaboration in reasoning environments**, briding the gap between human intent and model capability. I'm also interested in **building tools for agents** to enhance collaboration, currently excited about **reasoning-based retrieval** tools. Evals are also a big part of this: there needs to be more utility-based evals that return transferrable signals to downstream tasks. For both humans and AI alike!
 
 <!-- **demystifying and improving reasoning capabilities of AI**, through mediums such as logic puzzles and coding questions.  -->
 
