@@ -23,7 +23,7 @@ Nowadays, I'm particularly interested in building agent tools and frameworks for
 
 My undergraduate thesis was on analyzing and improving LLM performance on competitive programming, where I received the Sigma Xi Book award for outstanding undergraduate research and publication record.
 
-In my free time I love making and critiquing music. So much so that I built a generative AI [pop music composition tool](). I also love to produce music + sing.
+In my free time I love making and critiquing music. So much so that I built a generative AI [pop music composition tool](). I also love to produce music + sing. I frequently perform at local coffee shops!
 
 Feel free to contact me at [x]@princeton.edu, where [x] = benshi.
 
