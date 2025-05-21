@@ -1,8 +1,8 @@
 ---
 layout: post
-date: 2024-12-15
+date: 2025-5-21
 inline: true
 related_posts: false
 ---
 
-Just finished a new preprint investigating the effectiveness of reasoning-based retrieval! See a preview [here]({{ site.baseurl }}/assets/pdf/retrieval_paper.pdf).
+Check out our new preprint, [IMPersona](https://impersona-website.vercel.app/)!
