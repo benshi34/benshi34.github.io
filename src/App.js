@@ -1,11 +1,21 @@
 import './App.css';
 import { useState } from 'react';
+import confetti from 'canvas-confetti';
 
 function App() {
   const [expandedPaper, setExpandedPaper] = useState(null);
 
   const togglePaper = (paperId) => {
     setExpandedPaper(expandedPaper === paperId ? null : paperId);
+    
+    // Trigger confetti when opening a paper
+    if (expandedPaper !== paperId) {
+      confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 }
+      });
+    }
   };
   return (
     <div className="App">
@@ -48,6 +58,7 @@ function App() {
         
         <section className="selected-works">
           <h2>Selected Works</h2>
+          <p className="clickable-hint">you can just click on things, you know?</p>
           <div className="paper">
             <h3 className="paper-title clickable" onClick={() => togglePaper('knowledge-transfer')}>
               When Models Know More Than They Can Explain: Quantifying Knowledge Transfer in Human-AI Collaboration

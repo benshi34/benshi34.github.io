@@ -103,6 +103,15 @@ h2 {
   margin-top: 2.5rem;
 }
 
+.clickable-hint {
+  font-size: 0.8rem;
+  color: #888888;
+  font-style: italic;
+  margin-top: -1.2rem;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
 .paper {
   margin-bottom: 1.5rem;
   padding-bottom: 1.5rem;
