@@ -20,10 +20,23 @@ function App() {
   return (
     <div className="App">
       <main className="content">
-        <h1 className="greeting">
-          Ben Shi
-          <div className="chinese-name">石泉 (Shí Quán)</div>
-        </h1>
+        <div className="header-section">
+          <h1 className="greeting">
+            Ben Shi
+            <div className="chinese-name">石泉 (Shí Quán)</div>
+          </h1>
+          <div className="social-links">
+            <a href="https://scholar.google.com/citations?user=6jLhcpoAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" title="Google Scholar">
+              <span className="social-icon">GS</span>
+            </a>
+            <a href="https://github.com/benshi34" target="_blank" rel="noopener noreferrer" title="GitHub">
+              <span className="social-icon">gh</span>
+            </a>
+            <a href="https://x.com/benshi34" target="_blank" rel="noopener noreferrer" title="Twitter">
+              <span className="social-icon">tw</span>
+            </a>
+          </div>
+        </div>
         
         <p>
           Hi, my name is Ben. I currently work on post-training for conversational agents, based in San Francisco. In my (recent) past life I was an undergraduate student at <a href="https://www.princeton.edu/" target="_blank" rel="noopener noreferrer">Princeton</a>, advised by Professor <a href="https://www.cs.princeton.edu/~karthikn/" target="_blank" rel="noopener noreferrer">Karthik Narasimhan</a>, as well as Dr. <a href="https://ysymyth.github.io/" target="_blank" rel="noopener noreferrer">Shunyu Yao</a>.
