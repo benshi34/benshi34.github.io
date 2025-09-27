@@ -1,6 +1,7 @@
 import './App.css';
 import { useState } from 'react';
 import confetti from 'canvas-confetti';
+import profileImage from './profile.jpeg';
 
 function App() {
   const [expandedPaper, setExpandedPaper] = useState(null);
@@ -21,10 +22,15 @@ function App() {
     <div className="App">
       <main className="content">
         <div className="header-section">
-          <h1 className="greeting">
-            Ben Shi
-            <div className="chinese-name">石泉 (Shí Quán)</div>
-          </h1>
+          <div className="profile-section">
+            <img src={profileImage} alt="Ben Shi" className="profile-picture" />
+            <div className="name-section">
+              <h1 className="greeting">
+                Ben Shi
+                <div className="chinese-name">石泉 (Shí Quán)</div>
+              </h1>
+            </div>
+          </div>
           <div className="social-links">
             <a href="https://scholar.google.com/citations?user=6jLhcpoAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" title="Google Scholar">
               <span className="social-icon">GS</span>
