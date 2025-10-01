@@ -112,6 +112,7 @@ function App() {
               <a href="https://arxiv.org/abs/2504.04332" target="_blank" rel="noopener noreferrer">Paper@ArXiv</a>
               <a href="https://impersona-website.vercel.app/" target="_blank" rel="noopener noreferrer">Project Website</a>
               <a href="https://github.com/princeton-nlp/impersona" target="_blank" rel="noopener noreferrer">Code@GitHub</a>
+              <a href="https://x.com/BenShi34/status/1942784715330838836" target="_blank" rel="noopener noreferrer">Twitter Thread</a>
             </div>
           </div>
           
