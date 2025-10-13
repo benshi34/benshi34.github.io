@@ -264,3 +264,54 @@ h2 {
   background-color: #e0e0e0;
   text-decoration: none;
 }
+
+.award-text {
+  color: #ff6b35;
+  font-weight: 600;
+}
+
+.award-bubble {
+  display: inline-block;
+  background: linear-gradient(135deg, #fff8f0, #ffebd6);
+  color: #ff6b35;
+  font-weight: 600;
+  font-size: 0.75rem;
+  padding: 0.05rem 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #ffcc99;
+  margin-left: 0.5rem;
+  box-shadow: 0 1px 2px rgba(255, 107, 53, 0.1);
+  transition: all 0.2s ease;
+  line-height: 1.6;
+  vertical-align: baseline;
+  position: relative;
+  top: -0.1rem;
+}
+
+.award-bubble:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(255, 107, 53, 0.15);
+}
+
+.spotlight-bubble {
+  display: inline-block;
+  background: linear-gradient(135deg, #f0f8ff, #e6f3ff);
+  color: #0066cc;
+  font-weight: 600;
+  font-size: 0.75rem;
+  padding: 0.05rem 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #99ccff;
+  margin-left: 0.5rem;
+  box-shadow: 0 1px 2px rgba(0, 102, 204, 0.1);
+  transition: all 0.2s ease;
+  line-height: 1.6;
+  vertical-align: baseline;
+  position: relative;
+  top: -0.1rem;
+}
+
+.spotlight-bubble:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(0, 102, 204, 0.15);
+}

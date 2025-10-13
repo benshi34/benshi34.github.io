@@ -88,7 +88,10 @@ function App() {
               </p>
             )}
             <p className="paper-authors"><strong>Quan Shi</strong>, Carlos E. Jimenez, Shunyu Yao, Nick Haber, Diyi Yang, Karthik Narasimhan</p>
-            <p className="paper-venue">NeurIPS 2025, XLLM-Reason-Plan @ COLM 2025</p>
+            <p className="paper-venue">
+              NeurIPS 2025, XLLM-Reason-Plan @ COLM 2025
+              <span className="award-bubble">🏆 Special recognition award</span>
+            </p>
             <div className="paper-links">
               <a href="https://arxiv.org/abs/2506.05579" target="_blank" rel="noopener noreferrer">Paper@ArXiv</a>
               <a href="https://kite-live.vercel.app" target="_blank" rel="noopener noreferrer">Project Website</a>
@@ -126,7 +129,10 @@ function App() {
               </p>
             )}
             <p className="paper-authors">Hongjin Su, Howard Yen, Mengzhou Xia, Weijia Shi, Niklas Muennighoff, Han-yu Wang, Haisu Liu, <strong>Quan Shi</strong>, et al.</p>
-            <p className="paper-venue">ICLR 2025 (Spotlight)</p>
+            <p className="paper-venue">
+              ICLR 2025
+              <span className="spotlight-bubble">⭐ Spotlight</span>
+            </p>
             <div className="paper-links">
               <a href="https://arxiv.org/abs/2407.12883" target="_blank" rel="noopener noreferrer">Paper@ArXiv</a>
               <a href="https://brightbenchmark.github.io/" target="_blank" rel="noopener noreferrer">Project Website</a>
