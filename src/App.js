@@ -57,6 +57,10 @@ function App() {
           <h2>Recently</h2>
           <div className="timeline">
             <div className="timeline-item">
+              <span className="date">Oct '25</span>
+              <span className="event">Check out new blog posts on <a href="https://sierra.ai/blog/voice-post-training" target="_blank" rel="noopener noreferrer">voice agent post training</a> and <a href="https://sierra.ai/blog/t-bench-leaderboard" target="_blank" rel="noopener noreferrer">τ-bench</a> authored by me.</span>
+            </div>
+            <div className="timeline-item">
               <span className="date">Sep '25</span>
                 <span className="event"><a href="https://arxiv.org/abs/2506.05579" target="_blank" rel="noopener noreferrer">When Models Know More...</a> has been accepted to NeurIPS, and <a href="https://arxiv.org/abs/2504.04332" target="_blank" rel="noopener noreferrer">IMPersona</a> has been accepted to COLM 2025!</span>
             </div>
