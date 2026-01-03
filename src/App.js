@@ -76,7 +76,7 @@ function App() {
         </div>
         
         <p>
-          Feel free to contact me at <code>benshi@princeton.edu</code>.
+          Feel free to contact me at <code>qbshi@alumni.princeton.edu</code>.
         </p>
         
         <section className="selected-works">
