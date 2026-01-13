@@ -1,7 +1,7 @@
 import './App.css';
 import { useState } from 'react';
 import confetti from 'canvas-confetti';
-import profileImage from './profile.jpeg';
+import profileImage from './new_profile.jpg';
 
 function App() {
   const [expandedPaper, setExpandedPaper] = useState(null);
