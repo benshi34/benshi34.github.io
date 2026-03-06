@@ -83,6 +83,23 @@ function App() {
           <h2>Selected Works</h2>
           <p className="clickable-hint">you can just click on things, you know?</p>
           <div className="paper">
+            <h3 className="paper-title clickable" onClick={() => togglePaper('tau-knowledge')}>
+              τ-Knowledge: Evaluating Conversational Agents over Unstructured Knowledge
+            </h3>
+            {expandedPaper === 'tau-knowledge' && (
+              <p className="paper-description">
+                Conversational agents are increasingly deployed in knowledge-intensive settings, yet most benchmarks evaluate retrieval or tool use independently. We introduce τ-Knowledge, an extension of τ-Bench for evaluating agents in environments where success depends on coordinating external, natural-language knowledge with tool outputs. Our new domain, τ-Banking, models realistic fintech customer support workflows over ~700 interconnected knowledge documents. Even frontier models with high reasoning budgets achieve only ~25.5% pass^1, with reliability degrading sharply over repeated trials.
+              </p>
+            )}
+            <p className="paper-authors"><strong>Quan Shi*</strong>, Alexandra Zytek*, Pedram Razavi, Karthik Narasimhan, Victor Barres</p>
+            <p className="paper-venue">Preprint, 2026</p>
+            <div className="paper-links">
+              <a href="https://arxiv.org/abs/2603.04370" target="_blank" rel="noopener noreferrer">Paper@ArXiv</a>
+              <a href="https://github.com/sierra-research/tau2-bench/tree/dev/tau3" target="_blank" rel="noopener noreferrer">Code@GitHub</a>
+            </div>
+          </div>
+          
+          <div className="paper">
             <h3 className="paper-title clickable" onClick={() => togglePaper('knowledge-transfer')}>
               When Models Know More Than They Can Explain: Quantifying Knowledge Transfer in Human-AI Collaboration
             </h3>
