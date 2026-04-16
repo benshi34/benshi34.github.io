@@ -58,7 +58,7 @@ function App() {
           <div className="timeline">
             <div className="timeline-item">
               <span className="date">April '26</span>
-              <span className="event">Honored to have received the NSF GRFP Fellowship, and excited to continue my research at <a href="https://nlp.stanford.edu/" target="_blank" rel="noopener noreferrer">Stanford NLP</a>!</span>
+              <span className="event">Honored to have received the NSF GRFP Fellowship to continue my research at Stanford NLP.</span>
             </div>
             <div className="timeline-item">
               <span className="date">Oct '25</span>
