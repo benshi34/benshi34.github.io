@@ -50,7 +50,7 @@ function App() {
       
         
         <p>
-          In my free time I like to <a href="https://open.spotify.com/album/2wNwNFeKUyNj4YrdJGrpaJ?si=Lb-u3T8ZQJSuhfhLI4BJgw" target="_blank" rel="noopener noreferrer">produce music and sing</a>. I do not claim to be good at it.
+          In my free time I like to produce music and sing. I do not claim to be good at it.
         </p>
         
         <div className="recent-goings">
@@ -70,7 +70,7 @@ function App() {
             </div>
             <div className="timeline-item">
               <span className="date">April '25</span>
-                <span className="event">I released <a href="https://open.spotify.com/album/2wNwNFeKUyNj4YrdJGrpaJ?si=Lb-u3T8ZQJSuhfhLI4BJgw" target="_blank" rel="noopener noreferrer">a new album</a>!</span>
+                <span className="event">I released a new album!</span>
             </div>
           </div>
         </div>
