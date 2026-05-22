@@ -34,9 +34,9 @@ export default function PhdApplicationProcess() {
       <p>
         This past year I applied to CS PhDs in the United States, and I want to
         document a bit of my process, along with my theories/thoughts on how
-        applications work, in the hopes that it helps others! I generally think
+        applications work, in the hopes that it helps others. I generally think
         there are pretty minimal resources out there, and this is quite the
-        stressful process...
+        stressful process.
       </p>
 
       <p>
@@ -44,7 +44,7 @@ export default function PhdApplicationProcess() {
         have no idea what actually happens in the admissions process, and I
         should not be viewed as some beacon of success where everything I
         believe in/do is correct. These are all just personal reflections and
-        perspectives, so take only what you find useful!
+        perspectives, so take only what you find useful.
       </p>
 
       <h2>Application Timeline</h2>
@@ -60,9 +60,9 @@ export default function PhdApplicationProcess() {
           I went to NeurIPS this application year to present a poster. I only
           ended up chatting with one professor who later interviewed me - but I
           hear this is a great way to get your work and name out from the pile
-          of applications! Just be respectful of professors&apos; time and
+          of applications. Just be respectful of professors&apos; time and
           energy, since they probably have lots of PhD applicants throwing
-          themselves at them, especially the more popular profs...
+          themselves at them, especially the more popular profs.
         </li>
         <li>
           Most of my application materials were taken directly from my NSF GRFP
@@ -86,7 +86,7 @@ export default function PhdApplicationProcess() {
       <h2>NSF GRFP</h2>
       <p>
         I&apos;ve attached my research statement for NSF GRFP below: I hope this
-        can help people applying! The main thing here is to be very efficient
+        can help people applying. The main thing here is to be very efficient
         with your words: you only get 2 pages, and you want to sound as
         comprehensive and credentialed as possible within them.
       </p>
@@ -134,7 +134,7 @@ export default function PhdApplicationProcess() {
         music-related research project with. I feel that reference letters are
         very important, and it&apos;s hard to optimize for them in the short
         term. Do good research + build relationships with good mentors, and
-        these will come naturally!
+        these will come naturally.
       </p>
 
       <h2>Statement of Purpose</h2>
@@ -272,9 +272,7 @@ export default function PhdApplicationProcess() {
         since I wasn&apos;t sure at first whether this was the right call.
         Perhaps I&apos;ll do another piece on the value proposition of graduate
         school in this day and age, especially in AI/ML, but at least in the
-        current moment I&apos;m convinced it&apos;ll be meaningful. Who knows
-        what I&apos;ll think in a year though - I could come back to this and
-        regret everything...
+        current moment I&apos;m convinced it&apos;ll be meaningful.
       </p>
 
       <p>
@@ -283,7 +281,7 @@ export default function PhdApplicationProcess() {
         <a href="mailto:benshi@stanford.edu">benshi@stanford.edu</a> - I&apos;d
         be very happy to help, since this is seriously such a stressful process,
         and without a solid community of support it can feel very lonely
-        sometimes...
+        sometimes.
       </p>
     </>
   );
