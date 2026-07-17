@@ -91,7 +91,12 @@ function Home() {
             </p>
           )}
           <p className="paper-authors"><strong>Quan Shi*</strong>, Alexandra Zytek*, Pedram Razavi, Karthik Narasimhan, Victor Barres</p>
-          <p className="paper-venue">ICML 2026</p>
+          <p className="paper-venue">
+            ICML 2026
+            <a className="venue-bubble" href="https://artificialanalysis.ai/#intelligence" target="_blank" rel="noopener noreferrer">📊 Artificial Analysis Intelligence Index</a>
+            <a className="venue-bubble" href="https://thinkingmachines.ai/news/introducing-inkling/" target="_blank" rel="noopener noreferrer">🧠 Inkling release</a>
+            <a className="venue-bubble" href="https://openai.com/index/gpt-5-6/" target="_blank" rel="noopener noreferrer">✨ GPT-5.6 release</a>
+          </p>
           <div className="paper-links">
             <a href="https://arxiv.org/abs/2603.04370" target="_blank" rel="noopener noreferrer">Paper@ArXiv</a>
             <a href="https://github.com/sierra-research/tau2-bench/tree/dev/tau3" target="_blank" rel="noopener noreferrer">Code@GitHub</a>
