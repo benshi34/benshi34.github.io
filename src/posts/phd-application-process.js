@@ -41,10 +41,9 @@ export default function PhdApplicationProcess() {
 
       <p>
         Please take all advice presented here with a grain of salt: I obviously
-        have no idea what actually happens in the admissions process, and I
-        should not be viewed as some beacon of success where everything I
-        believe in/do is correct. These are all just personal reflections and
-        perspectives, so take only what you find useful.
+        have no idea what actually happens in the admissions process. These are
+        all just personal reflections and perspectives, so take only what you
+        find useful.
       </p>
 
       <h2>Application Timeline</h2>
