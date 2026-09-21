@@ -56,6 +56,10 @@ function Home() {
         <h2>Recently</h2>
         <div className="timeline">
           <div className="timeline-item">
+            <span className="date">Sep '26</span>
+            <span className="event">τ<sup>τ</sup>-bench is out! See <a href="https://sierra-research.github.io/hyper-tau-bench/" target="_blank" rel="noopener noreferrer">leaderboard</a></span>
+          </div>
+          <div className="timeline-item">
             <span className="date">April '26</span>
             <span className="event">Honored to have received the NSF GRFP Fellowship to continue my research at Stanford NLP.</span>
           </div>
@@ -67,10 +71,6 @@ function Home() {
             <span className="date">Sep '25</span>
             <span className="event"><a href="https://arxiv.org/abs/2506.05579" target="_blank" rel="noopener noreferrer">When Models Know More...</a> has been accepted to NeurIPS, and <a href="https://arxiv.org/abs/2504.04332" target="_blank" rel="noopener noreferrer">IMPersona</a> has been accepted to COLM 2025!</span>
           </div>
-          <div className="timeline-item">
-            <span className="date">April '25</span>
-            <span className="event">I released a new album!</span>
-          </div>
         </div>
       </div>
 
@@ -81,6 +81,25 @@ function Home() {
       <section className="selected-works">
         <h2>Selected Works</h2>
         <p className="clickable-hint">you can just click on things, you know?</p>
+        <div className="paper">
+          <h3 className="paper-title clickable" onClick={() => togglePaper('hyper-tau')}>
+            τ<sup>τ</sup>-Bench: An Environment for End-To-End, Realistic Agent Construction
+          </h3>
+          {expandedPaper === 'hyper-tau' && (
+            <p className="paper-description">
+              The work of building agents is increasingly handed to coding agents, but no benchmark asks whether they can actually deliver one under the conditions of a real client engagement. τ<sup>τ</sup>-bench (pronounced "hyper-tau-bench") makes agent construction itself the task: a developer agent gets the records a business actually keeps, a client who holds the requirements, a possibly defective production API, a codebase to inherit, and hard limits on serving cost and models. The agent it builds is then deployed against held-out simulated users. Across 53 tasks in four domains, the strongest configuration passes just 23.9%, against an expert-authored ceiling of 82.2%.
+            </p>
+          )}
+          <p className="paper-authors"><strong>Quan Shi</strong>, Keshav Dhandhania, Karthik Narasimhan, Victor Barres</p>
+          <p className="paper-venue">Preprint 2026</p>
+          <div className="paper-links">
+            <a href="https://arxiv.org/abs/2609.04611" target="_blank" rel="noopener noreferrer">Paper@ArXiv</a>
+            <a href="https://sierra.ai/blog/hyper-t-bench-evaluating-agents-that-build-agents" target="_blank" rel="noopener noreferrer">Blog</a>
+            <a href="https://sierra-research.github.io/hyper-tau-bench/" target="_blank" rel="noopener noreferrer">Leaderboard</a>
+            <a href="https://github.com/sierra-research/hyper-tau-bench" target="_blank" rel="noopener noreferrer">Code@GitHub</a>
+          </div>
+        </div>
+
         <div className="paper">
           <h3 className="paper-title clickable" onClick={() => togglePaper('tau-knowledge')}>
             τ-Knowledge: Evaluating Conversational Agents over Unstructured Knowledge
