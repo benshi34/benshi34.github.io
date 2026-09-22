@@ -164,28 +164,6 @@ function Home() {
         </div>
 
         <div className="paper">
-          <h3 className="paper-title clickable" onClick={() => togglePaper('bright')}>
-            BRIGHT: A Realistic and Challenging Benchmark for Reasoning-Intensive Retrieval
-          </h3>
-          {expandedPaper === 'bright' && (
-            <p className="paper-description">
-              Existing retrieval benchmarks primarily challenge keyword or semantic-based retrieval. However, many complex real-world queries require in-depth reasoning to identify relevant documents beyond surface form matching. BRIGHT introduces the first benchmark for reasoning-intensive retrieval, featuring 1,384 real-world queries spanning diverse domains like economics, psychology, mathematics, and coding.
-            </p>
-          )}
-          <p className="paper-authors">Hongjin Su, Howard Yen, Mengzhou Xia, Weijia Shi, Niklas Muennighoff, Han-yu Wang, Haisu Liu, <strong>Quan Shi</strong>, et al.</p>
-          <p className="paper-venue">
-            ICLR 2025
-            <span className="spotlight-bubble">⭐ Spotlight</span>
-          </p>
-          <div className="paper-links">
-            <a href="https://arxiv.org/abs/2407.12883" target="_blank" rel="noopener noreferrer">Paper@ArXiv</a>
-            <a href="https://brightbenchmark.github.io/" target="_blank" rel="noopener noreferrer">Project Website</a>
-            <a href="https://github.com/xlang-ai/BRIGHT" target="_blank" rel="noopener noreferrer">Code@GitHub</a>
-            <a href="https://x.com/hongjin_su/status/1814299949326311626" target="_blank" rel="noopener noreferrer">Twitter Thread</a>
-          </div>
-        </div>
-
-        <div className="paper">
           <h3 className="paper-title clickable" onClick={() => togglePaper('olympiad')}>
             Can Language Models Solve Olympiad Programming?
           </h3>
