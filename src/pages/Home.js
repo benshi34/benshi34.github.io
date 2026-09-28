@@ -45,7 +45,7 @@ function Home() {
       </div>
 
       <p>
-        Hi, my name is Ben. I currently work on post-training for conversational agents, based in San Francisco. In my (recent) past life I was an undergraduate student at <a href="https://www.princeton.edu/" target="_blank" rel="noopener noreferrer">Princeton</a>, advised by Professor <a href="https://www.cs.princeton.edu/~karthikn/" target="_blank" rel="noopener noreferrer">Karthik Narasimhan</a>, as well as Dr. <a href="https://ysymyth.github.io/" target="_blank" rel="noopener noreferrer">Shunyu Yao</a>.
+        Hi, my name is Ben. I am a CS PhD student at <a href="https://nlp.stanford.edu/" target="_blank" rel="noopener noreferrer">Stanford NLP</a>. In my past life I was an undergraduate student at <a href="https://www.princeton.edu/" target="_blank" rel="noopener noreferrer">Princeton</a>, advised by Professor <a href="https://www.cs.princeton.edu/~karthikn/" target="_blank" rel="noopener noreferrer">Karthik Narasimhan</a> and Dr. <a href="https://ysymyth.github.io/" target="_blank" rel="noopener noreferrer">Shunyu Yao</a>.
       </p>
 
       <p>
@@ -57,7 +57,7 @@ function Home() {
         <div className="timeline">
           <div className="timeline-item">
             <span className="date">Sep '26</span>
-            <span className="event">τ<sup>τ</sup>-bench is out! See <a href="https://sierra-research.github.io/hyper-tau-bench/" target="_blank" rel="noopener noreferrer">leaderboard</a></span>
+            <span className="event">τ<sup>τ</sup>-bench is out! See <a href="https://sierra.ai/fr/blog/hyper-t-bench-evaluating-agents-that-build-agents" target="_blank" rel="noopener noreferrer">blog</a></span>
           </div>
           <div className="timeline-item">
             <span className="date">April '26</span>
