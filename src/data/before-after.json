@@ -1,0 +1,78 @@
+[
+  {
+    "label": "Pick one and start",
+    "context": [
+      {
+        "role": "assistant",
+        "text": "That's awesome! And don't worry—you don't need a Discord server at all. We can get creative right here in our chat! 🎨✨\n\nHere are a few creative ideas we can try together:\n\n1. **Co-Write a Story**: I'll start with a sentence, you add the next, and we build a wild tale together.\n2. **Design a Character**: Create a superhero, villain, or fantasy creature with unique powers and backstory.\n3. **Imagine a World**: Build a fictional planet, city, or magical realm with its own rules and culture.\n4. **Make Up a Band**: Invent a band name, genre, and their biggest hit song (we can even write lyrics!).\n5. **Creative Challenge**: I give you a random prompt (like \"a robot who loves gardening\"), and you describe what happens next.\n\nWhich one sounds fun? Or if you have something else in mind, just say the word! 🚀"
+      },
+      {
+        "role": "user",
+        "text": "I wanna do something like that"
+      }
+    ],
+    "before": {
+      "reply": "Awesome! Creativity is the best boredom killer. 🎨\n\nWe don't need Discord for this—we can do it right here! Which one sounds most fun?\n\n1. **Co-Write a Story** (I start a sentence, you continue)\n2. **Design a Character** (Hero, villain, or creature)\n3. **Build a World** (Fantasy city, sci-fi planet, etc.)\n4. **Surprise Me** (I pick a random prompt)\n\nJust say the number, and I'll kick us off! Or if you want, I can just start a story right now and you can jump in whenever. What do you think? 🚀"
+    },
+    "after": {
+      "reply": "Awesome! Let's go with **co-writing a story**—it's super fun and we can make it as wild as you want. 📖✨\n\nI'll kick things off:\n\n*The old clock tower in the center of town hadn't chimed in fifty years. But tonight, at exactly midnight, it rang once... and the shadow of the clock hand stretched across the street, pointing directly at your door.*\n\nYour turn! What happens next? 😊"
+    }
+  },
+  {
+    "label": "Just answer the question",
+    "context": [
+      {
+        "role": "assistant",
+        "text": "Timing is critical. File too early, and you may be seen as escalating prematurely; file too late, and the project may already be compromised. Here is the optimal timing strategy:\n\n### 1. **The \"3-Attempt Rule\"**\nFile the grievance **immediately after your third documented attempt** to reach them has gone unanswered.\n*   **Why:** This demonstrates you gave them a reasonable opportunity to respond before escalating. It shows you are reasonable and not jumping to conclusions.\n*   **Example:** If you messaged them on Monday, Wednesday, and Friday with no reply, file on Monday morning of the following week.\n\n### 2. **Before the Next Major Deadline**\nFile **at least 48–72 hours before the next critical milestone or deadline**.\n*   **Why:** This gives the authority figure (professor or manager) enough time to intervene, redistribute work, or adjust expectations before the project is at risk of failure.\n*   **Risk:** If you wait until the day before the deadline, the damage is often already done, and there may be no time to fix the workflow.\n\n### 3. **The \"Point of No Return\"**\nIf their missing work is **blocking the rest of the team** from moving forward, file **immediately**, regardless of how many attempts you've made.\n*   **Why:** If the project cannot progress without their input, waiting is no longer an option. The priority shifts from \"giving them a chance\" to \"saving the project.\"\n\n### 4. **Avoid These Timing Mistakes**\n*   **Don't wait until the final deadline:** By then, the project is likely already failing, and it's harder to adjust grades or timelines.\n*   **Don't file on a Friday afternoon:** Your request may get lost over the weekend. Aim for Monday or Tuesday morning when decision-makers are fresh and available.\n*   **Don't file after the project is submitted:** If you wait until after the work is turned in, it's often too late to address the issue formally.\n\n### Summary Checklist for Timing\n- [ ] Have you made at least 3 documented attempts to contact them?\n- [ ] Is there a major deadline coming up in the next 3–5 days?\n- [ ] Is their absence currently blocking the rest of the team?\n- [ ] Is it a weekday morning (Mon–Wed) rather than a Friday afternoon?\n\nIf you can answer \"yes\" to the first two questions, or if their absence is actively blocking progress, **file now.** Waiting longer rarely improves the situation and only increases the risk to the project."
+      },
+      {
+        "role": "user",
+        "text": "Should I even try to reach them"
+      }
+    ],
+    "before": {
+      "reply": "This is a critical decision point. The short answer is: **It depends on how many attempts you’ve already made and how much time you have left.**\n\nHere is a decision framework to help you determine if you should make another attempt or move directly to filing a grievance.\n\n### When You Should Stop Contacting Them\nIf you meet **any** of the following conditions, stop reaching out and escalate immediately:\n*   **You have tried 3+ times:** If you have already messaged, called, or emailed them three separate times with no response, further contact is unlikely to yield results and wastes valuable time.\n*   **The deadline is within 48 hours:** If the project is due very soon, you do not have time to wait for a response. You must assume they will not contribute and protect the project.\n*   **They have explicitly disengaged:** If they have replied with something like \"I’m dropping out\" or \"I don’t have time,\" further attempts are futile.\n*   **You are experiencing harassment:** If your attempts to contact them have been met with hostility or aggression, prioritize your safety and well-being.\n\n### When One Final Attempt Might Be Worth It\nYou might consider **one last, formal attempt** only if:\n*   **You have tried 1–2 times:** If this is early in the process, a final nudge shows you gave them a fair chance.\n*   **There is significant time remaining:** If the deadline is weeks away, a final attempt may buy you time before you have to escalate.\n*   **You need a clear paper trail:** Sometimes a final \"formal notice\" message (see template below) is required for your grievance documentation.\n\n### How to Make That Final Attempt (If You Choose To)\nIf you decide to send one last message, make it **formal, brief, and final**. Do not ask questions or be friendly. State the facts and the consequences.\n\n**Template:**\n> \"Hi [Name], I’ve tried to reach you on [Date 1], [Date 2], and [Date 3] regarding [Task]. As of now, we have not received your contribution.\n>\n> We have a deadline on [Date]. If we do not hear from you by [Time/Date], we will proceed with redistributing your tasks and documenting your absence to [Professor/Manager].\n>\n> Please confirm receipt of this message.\"\n\n**Why this works:**\n*   It documents a final warning.\n*   It sets a clear deadline for response.\n*   It shifts the focus from \"please help\" to \"we are taking action.\"\n\n### Recommendation\nGiven your previous messages indicate they are **not responding at all**, the most efficient path is usually to **stop contacting them** and file the grievance immediately. Continuing to message a \"ghost\" rarely changes their behavior and only delays necessary action.\n\n**Use your energy to protect the project, not to chase someone who has checked out.**"
+    },
+    "after": {
+      "reply": "Yes, you should make a few attempts, but with a clear strategy. Here's why and how to do it efficiently:\n\n### Why You Should Try (Briefly)\nMost formal grievance procedures **require proof** that you attempted informal resolution first. If you skip this step, your complaint may be dismissed as premature. However, you don't need to keep trying indefinitely.\n\n### The Efficient Approach\n1. **Make 2–3 focused attempts** over 3–5 days.\n   - Use different channels (email, message, call) to show thoroughness.\n   - Keep messages brief and factual: *\"We need your input on [task] by [date] to stay on track. Please confirm receipt.\"*\n\n2. **Set a clear deadline** in your message.\n   - Example: *\"If we don't hear back by [date/time], we'll need to escalate this to [professor/manager] to keep the project moving.\"*\n   - This gives them a final chance while documenting your intent to escalate.\n\n3. **Stop after the deadline passes.**\n   - Once the deadline passes with no response, you have your documentation. File the grievance immediately—no need for further attempts.\n\n### When You Can Skip It\nYou can bypass informal attempts if:\n- The member has **already explicitly stated** they won't participate.\n- There's an **immediate project crisis** (e.g., deadline is in 24 hours and their work is blocking everything).\n- Your organization's policy allows **immediate escalation** for non-participation.\n\n### Bottom Line\nMake 2–3 documented attempts with a clear deadline, then escalate. This protects your position in the formal process without wasting time on a lost cause. If you've already tried multiple times with no response, you're ready to file now."
+    }
+  },
+  {
+    "label": "Take his word for it",
+    "context": [
+      {
+        "role": "assistant",
+        "text": "That is a very likely culprit. Many PyTorch libraries and specific versions of PyTorch itself have strict requirements for Python versions. If the documentation was written for a newer version of the tool, it might assume you're on Python 3.10 or 3.11, and trying to run it on an older version (like 3.8 or 3.9) often causes installation failures or import errors.\n\nHere is the safest way to handle that switch without messing up your system:\n\n1.  **Check your current version:**\n    Run `python --version` in your terminal to confirm what you are currently on.\n\n2.  **Create a Virtual Environment (Recommended):**\n    Instead of changing your global Python version, it's best to create a specific environment for this project.\n    *   If you have Python 3.10 installed, you can create a venv:\n        `python3.10 -m venv my_project_env`\n    *   Activate it:\n        *   **Windows:** `my_project_env\\Scripts\\activate`\n        *   **Mac/Linux:** `source my_project_env/bin/activate`\n\n3.  **Reinstall PyTorch in the new environment:**\n    Once activated, make sure your `python` command points to 3.10, then reinstall PyTorch and the specific library you were trying to set up.\n\nDo you have Python 3.10 installed on your machine already, or do you need help finding a way to install that version first?"
+      },
+      {
+        "role": "user",
+        "text": "Ok I know how to do this, I just want to install the library on python 3.10"
+      }
+    ],
+    "before": {
+      "reply": "Got it! If you're already on Python 3.10 and just need to install the library, that should solve your issue.\n\nTo help you with the actual installation, could you tell me:\n\n1.  **What is the name of the library you're trying to install?** (If you don't know, the original command usually contains the name).\n2.  **What was the command you were trying to run?** (e.g., `pip install something`, `conda install ...`, etc.)\n\nOnce you share that, I can give you the exact command to run for Python 3.10. If you've already switched to the 3.10 environment, just make sure you're in the correct virtual environment before running the install command.\n\nAlso, if you're installing something specific for PyTorch (like `torchvision`, `transformers`, `diffusers`, etc.), let me know so I can give you the most accurate steps."
+    },
+    "after": {
+      "reply": "Sounds like a plan. That's usually the fix for those kinds of compatibility errors.\n\nJust one quick reminder before you run the install command: make sure your terminal is actually **activated** for the Python 3.10 environment. If you run the install command while still in your old environment, it will just fail again.\n\nIf you see `(venv)` or `py310` at the start of your command line prompt, you're good to go. Let me know if it works after the switch!"
+    }
+  },
+  {
+    "label": "Do only what was asked",
+    "context": [
+      {
+        "role": "assistant",
+        "text": "Perfect. You're off to a start!\n\nSo your working title is **\"Optimization of...\"** — let's finish that thought. What specifically are you optimizing? Is it:\n\n*   A process (e.g., \"Optimization of Supply Chain Logistics\")\n*   A system (e.g., \"Optimization of Database Queries\")\n*   An algorithm (e.g., \"Optimization of Neural Network Training\")\n*   A resource (e.g., \"Optimization of Energy Consumption\")\n*   Or something else entirely?\n\nJust tell me the subject, and I'll help you draft that first sentence or outline the next steps for your paper."
+      },
+      {
+        "role": "user",
+        "text": "Just send"
+      }
+    ],
+    "before": {
+      "reply": "Here is a starter template. Copy this into your document and fill in the brackets.\n\n**Title:** Optimization of [Insert Subject]\n\n**1. Introduction**\n*   **Problem:** [What is currently inefficient or broken?]\n*   **Goal:** [What specific improvement are you targeting?]\n*   **Scope:** [What is included/excluded in this study?]\n\n**2. Methodology**\n*   **Approach:** [Describe the method or algorithm used.]\n*   **Tools:** [List software, data sources, or equipment.]\n*   **Metrics:** [How are you measuring success?]\n\n**3. Results**\n*   **Findings:** [What data did you generate?]\n*   **Comparison:** [Before vs. After optimization.]\n\n**4. Conclusion**\n*   **Summary:** [Main takeaway.]\n*   **Implications:** [Why does this matter?]\n\n**Action:** Copy this into your file and write the **Problem Statement** now."
+    },
+    "after": {
+      "reply": "Understood. Here is a strong opening sentence to get your paper moving immediately:\n\n\"This paper presents a comprehensive analysis of the optimization of [insert specific subject], aiming to identify key inefficiencies and propose actionable strategies for enhanced performance.\"\n\n**Your next step:** Replace `[insert specific subject]` with your actual topic (e.g., \"supply chain logistics,\" \"database queries,\" \"energy consumption\") and hit send.\n\nYou've got this—keep the momentum going!"
+    }
+  }
+]

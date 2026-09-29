@@ -23,6 +23,17 @@ function BlogPost() {
       <article className="blog-post">
         <header className="post-header">
           <h1 className="post-title">{post.title}</h1>
+          {post.author && (
+            <p className="post-byline">
+              <span className="post-author">
+                <span className="post-author-label">Authored by</span>{' '}
+                {post.author}
+              </span>
+              {post.affiliation && (
+                <span className="post-affiliation">{post.affiliation}</span>
+              )}
+            </p>
+          )}
           <p className="post-date">{post.date}</p>
         </header>
         <div className="post-body">
