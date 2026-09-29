@@ -1,0 +1,718 @@
+{
+ "cols": [
+  {
+   "key": "words",
+   "label": "Length",
+   "unit": "%"
+  },
+  {
+   "key": "lists",
+   "label": "Lists",
+   "unit": "pp"
+  },
+  {
+   "key": "ends_q",
+   "label": "Ends with a question",
+   "unit": "pp"
+  },
+  {
+   "key": "multi_q",
+   "label": "Several questions",
+   "unit": "pp"
+  },
+  {
+   "key": "empathy_open",
+   "label": "Empathetic opener",
+   "unit": "pp"
+  },
+  {
+   "key": "options",
+   "label": "Offers options",
+   "unit": "pp"
+  },
+  {
+   "key": "therapy",
+   "label": "Therapy language",
+   "unit": "pp"
+  },
+  {
+   "key": "ai_disclaimer",
+   "label": "\"As an AI\" disclaimer",
+   "unit": "pp"
+  }
+ ],
+ "rows": [
+  {
+   "key": "therapy",
+   "label": "Therapy",
+   "nBefore": 222,
+   "nAfter": 299,
+   "cells": [
+    {
+     "before": 198,
+     "after": 110,
+     "delta": -44
+    },
+    {
+     "before": 63.5,
+     "after": 5.7,
+     "delta": -58
+    },
+    {
+     "before": 30.2,
+     "after": 40.8,
+     "delta": 11
+    },
+    {
+     "before": 45.5,
+     "after": 43.8,
+     "delta": -2
+    },
+    {
+     "before": 15.3,
+     "after": 19.7,
+     "delta": 4
+    },
+    {
+     "before": 14.4,
+     "after": 4.3,
+     "delta": -10
+    },
+    {
+     "before": 33.8,
+     "after": 13.4,
+     "delta": -20
+    },
+    {
+     "before": 4.5,
+     "after": 1.7,
+     "delta": -3
+    }
+   ]
+  },
+  {
+   "key": "homesickness",
+   "label": "Homesickness",
+   "nBefore": 73,
+   "nAfter": 101,
+   "cells": [
+    {
+     "before": 113,
+     "after": 83,
+     "delta": -27
+    },
+    {
+     "before": 24.7,
+     "after": 1.0,
+     "delta": -24
+    },
+    {
+     "before": 24.7,
+     "after": 40.6,
+     "delta": 16
+    },
+    {
+     "before": 57.5,
+     "after": 35.6,
+     "delta": -22
+    },
+    {
+     "before": 23.3,
+     "after": 15.8,
+     "delta": -7
+    },
+    {
+     "before": 15.1,
+     "after": 1.0,
+     "delta": -14
+    },
+    {
+     "before": 27.4,
+     "after": 4.0,
+     "delta": -23
+    },
+    {
+     "before": 4.1,
+     "after": 0,
+     "delta": -4
+    }
+   ]
+  },
+  {
+   "key": "acute_support",
+   "label": "Acute support",
+   "nBefore": 167,
+   "nAfter": 217,
+   "cells": [
+    {
+     "before": 154,
+     "after": 87,
+     "delta": -44
+    },
+    {
+     "before": 49.1,
+     "after": 9.2,
+     "delta": -40
+    },
+    {
+     "before": 22.2,
+     "after": 33.6,
+     "delta": 11
+    },
+    {
+     "before": 31.7,
+     "after": 23.0,
+     "delta": -9
+    },
+    {
+     "before": 12.0,
+     "after": 25.3,
+     "delta": 13
+    },
+    {
+     "before": 15.0,
+     "after": 3.2,
+     "delta": -12
+    },
+    {
+     "before": 23.4,
+     "after": 16.1,
+     "delta": -7
+    },
+    {
+     "before": 2.4,
+     "after": 1.8,
+     "delta": -1
+    }
+   ]
+  },
+  {
+   "key": "conflict",
+   "label": "Conflict",
+   "nBefore": 218,
+   "nAfter": 289,
+   "cells": [
+    {
+     "before": 143,
+     "after": 88,
+     "delta": -38
+    },
+    {
+     "before": 50.9,
+     "after": 16.3,
+     "delta": -35
+    },
+    {
+     "before": 29.4,
+     "after": 39.8,
+     "delta": 10
+    },
+    {
+     "before": 48.6,
+     "after": 32.9,
+     "delta": -16
+    },
+    {
+     "before": 11.5,
+     "after": 18.0,
+     "delta": 7
+    },
+    {
+     "before": 14.2,
+     "after": 9.0,
+     "delta": -5
+    },
+    {
+     "before": 29.8,
+     "after": 14.9,
+     "delta": -15
+    },
+    {
+     "before": 2.8,
+     "after": 0.3,
+     "delta": -2
+    }
+   ]
+  },
+  {
+   "key": "substance",
+   "label": "Substance use",
+   "nBefore": 77,
+   "nAfter": 82,
+   "cells": [
+    {
+     "before": 241,
+     "after": 134,
+     "delta": -45
+    },
+    {
+     "before": 68.8,
+     "after": 19.5,
+     "delta": -49
+    },
+    {
+     "before": 40.3,
+     "after": 29.3,
+     "delta": -11
+    },
+    {
+     "before": 59.7,
+     "after": 45.1,
+     "delta": -15
+    },
+    {
+     "before": 10.4,
+     "after": 13.4,
+     "delta": 3
+    },
+    {
+     "before": 19.5,
+     "after": 13.4,
+     "delta": -6
+    },
+    {
+     "before": 33.8,
+     "after": 24.4,
+     "delta": -9
+    },
+    {
+     "before": 22.1,
+     "after": 6.1,
+     "delta": -16
+    }
+   ]
+  },
+  {
+   "key": "health",
+   "label": "Health worries",
+   "nBefore": 82,
+   "nAfter": 103,
+   "cells": [
+    {
+     "before": 247,
+     "after": 105,
+     "delta": -57
+    },
+    {
+     "before": 87.8,
+     "after": 23.3,
+     "delta": -65
+    },
+    {
+     "before": 17.1,
+     "after": 34.0,
+     "delta": 17
+    },
+    {
+     "before": 40.2,
+     "after": 33.0,
+     "delta": -7
+    },
+    {
+     "before": 22.0,
+     "after": 24.3,
+     "delta": 2
+    },
+    {
+     "before": 29.3,
+     "after": 10.7,
+     "delta": -19
+    },
+    {
+     "before": 15.9,
+     "after": 14.6,
+     "delta": -1
+    },
+    {
+     "before": 41.5,
+     "after": 5.8,
+     "delta": -36
+    }
+   ]
+  },
+  {
+   "key": "motivation",
+   "label": "Motivation",
+   "nBefore": 88,
+   "nAfter": 98,
+   "cells": [
+    {
+     "before": 151,
+     "after": 88,
+     "delta": -42
+    },
+    {
+     "before": 70.5,
+     "after": 15.3,
+     "delta": -55
+    },
+    {
+     "before": 6.8,
+     "after": 33.7,
+     "delta": 27
+    },
+    {
+     "before": 37.5,
+     "after": 49.0,
+     "delta": 11
+    },
+    {
+     "before": 9.1,
+     "after": 7.1,
+     "delta": -2
+    },
+    {
+     "before": 18.2,
+     "after": 3.1,
+     "delta": -15
+    },
+    {
+     "before": 11.4,
+     "after": 7.1,
+     "delta": -4
+    },
+    {
+     "before": 0,
+     "after": 0,
+     "delta": 0
+    }
+   ]
+  },
+  {
+   "key": "stress",
+   "label": "Stress",
+   "nBefore": 155,
+   "nAfter": 197,
+   "cells": [
+    {
+     "before": 90,
+     "after": 110,
+     "delta": 22
+    },
+    {
+     "before": 44.5,
+     "after": 28.4,
+     "delta": -16
+    },
+    {
+     "before": 20.0,
+     "after": 33.0,
+     "delta": 13
+    },
+    {
+     "before": 29.7,
+     "after": 39.1,
+     "delta": 9
+    },
+    {
+     "before": 14.8,
+     "after": 14.7,
+     "delta": 0
+    },
+    {
+     "before": 9.0,
+     "after": 2.5,
+     "delta": -6
+    },
+    {
+     "before": 14.2,
+     "after": 7.1,
+     "delta": -7
+    },
+    {
+     "before": 1.3,
+     "after": 1.5,
+     "delta": 0
+    }
+   ]
+  },
+  {
+   "key": "etiquette",
+   "label": "Etiquette",
+   "nBefore": 91,
+   "nAfter": 114,
+   "cells": [
+    {
+     "before": 84,
+     "after": 100,
+     "delta": 19
+    },
+    {
+     "before": 56.0,
+     "after": 36.0,
+     "delta": -20
+    },
+    {
+     "before": 7.7,
+     "after": 19.3,
+     "delta": 12
+    },
+    {
+     "before": 24.2,
+     "after": 24.6,
+     "delta": 0
+    },
+    {
+     "before": 1.1,
+     "after": 3.5,
+     "delta": 2
+    },
+    {
+     "before": 9.9,
+     "after": 6.1,
+     "delta": -4
+    },
+    {
+     "before": 2.2,
+     "after": 1.8,
+     "delta": 0
+    },
+    {
+     "before": 1.1,
+     "after": 0.9,
+     "delta": 0
+    }
+   ]
+  },
+  {
+   "key": "planning",
+   "label": "Planning",
+   "nBefore": 76,
+   "nAfter": 98,
+   "cells": [
+    {
+     "before": 109,
+     "after": 114,
+     "delta": 5
+    },
+    {
+     "before": 69.7,
+     "after": 46.9,
+     "delta": -23
+    },
+    {
+     "before": 17.1,
+     "after": 29.6,
+     "delta": 12
+    },
+    {
+     "before": 34.2,
+     "after": 28.6,
+     "delta": -6
+    },
+    {
+     "before": 7.9,
+     "after": 5.1,
+     "delta": -3
+    },
+    {
+     "before": 3.9,
+     "after": 11.2,
+     "delta": 7
+    },
+    {
+     "before": 5.3,
+     "after": 0,
+     "delta": -5
+    },
+    {
+     "before": 2.6,
+     "after": 0,
+     "delta": -3
+    }
+   ]
+  },
+  {
+   "key": "nutrition",
+   "label": "Nutrition",
+   "nBefore": 85,
+   "nAfter": 114,
+   "cells": [
+    {
+     "before": 277,
+     "after": 176,
+     "delta": -36
+    },
+    {
+     "before": 71.8,
+     "after": 54.4,
+     "delta": -17
+    },
+    {
+     "before": 10.6,
+     "after": 48.2,
+     "delta": 38
+    },
+    {
+     "before": 17.6,
+     "after": 24.6,
+     "delta": 7
+    },
+    {
+     "before": 2.4,
+     "after": 4.4,
+     "delta": 2
+    },
+    {
+     "before": 14.1,
+     "after": 28.1,
+     "delta": 14
+    },
+    {
+     "before": 4.7,
+     "after": 2.6,
+     "delta": -2
+    },
+    {
+     "before": 3.5,
+     "after": 5.3,
+     "delta": 2
+    }
+   ]
+  },
+  {
+   "key": "research",
+   "label": "Research",
+   "nBefore": 222,
+   "nAfter": 300,
+   "cells": [
+    {
+     "before": 315,
+     "after": 167,
+     "delta": -47
+    },
+    {
+     "before": 86.0,
+     "after": 55.3,
+     "delta": -31
+    },
+    {
+     "before": 12.6,
+     "after": 31.0,
+     "delta": 18
+    },
+    {
+     "before": 48.6,
+     "after": 41.7,
+     "delta": -7
+    },
+    {
+     "before": 5.4,
+     "after": 5.3,
+     "delta": 0
+    },
+    {
+     "before": 25.2,
+     "after": 35.7,
+     "delta": 10
+    },
+    {
+     "before": 3.2,
+     "after": 1.3,
+     "delta": -2
+    },
+    {
+     "before": 2.3,
+     "after": 2.7,
+     "delta": 0
+    }
+   ]
+  },
+  {
+   "key": "tech_help",
+   "label": "Tech help",
+   "nBefore": 153,
+   "nAfter": 205,
+   "cells": [
+    {
+     "before": 213,
+     "after": 160,
+     "delta": -25
+    },
+    {
+     "before": 86.3,
+     "after": 59.5,
+     "delta": -27
+    },
+    {
+     "before": 9.2,
+     "after": 9.8,
+     "delta": 1
+    },
+    {
+     "before": 49.0,
+     "after": 26.8,
+     "delta": -22
+    },
+    {
+     "before": 12.4,
+     "after": 7.3,
+     "delta": -5
+    },
+    {
+     "before": 13.7,
+     "after": 14.6,
+     "delta": 1
+    },
+    {
+     "before": 2.0,
+     "after": 0,
+     "delta": -2
+    },
+    {
+     "before": 7.8,
+     "after": 4.4,
+     "delta": -3
+    }
+   ]
+  },
+  {
+   "key": "car",
+   "label": "Car trouble",
+   "nBefore": 86,
+   "nAfter": 94,
+   "cells": [
+    {
+     "before": 264,
+     "after": 183,
+     "delta": -31
+    },
+    {
+     "before": 72.1,
+     "after": 64.9,
+     "delta": -7
+    },
+    {
+     "before": 7.0,
+     "after": 14.9,
+     "delta": 8
+    },
+    {
+     "before": 45.3,
+     "after": 38.3,
+     "delta": -7
+    },
+    {
+     "before": 8.1,
+     "after": 4.3,
+     "delta": -4
+    },
+    {
+     "before": 10.5,
+     "after": 10.6,
+     "delta": 0
+    },
+    {
+     "before": 0,
+     "after": 3.2,
+     "delta": 3
+    },
+    {
+     "before": 14.0,
+     "after": 5.3,
+     "delta": -9
+    }
+   ]
+  }
+ ]
+}
