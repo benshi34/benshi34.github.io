@@ -113,11 +113,11 @@ export default function ImpersonaEnv() {
 
       <p>
         As we grow the capability to build models of individual decision making,
-        we think one big question arises:{' '}
+        one big question arises:{' '}
         <strong>
           how can we best utilize accurate{' '}
           <span className="post-term">user models</span>
-          <InfoTip label="What we mean by user model">
+          <InfoTip label="What I mean by user model">
             People use &ldquo;user model&rdquo; to mean different things. Here,
             a user model is a model that, given any context, can replicate the
             output of a target user: what that specific person would say, do, or
@@ -126,7 +126,7 @@ export default function ImpersonaEnv() {
           ?
         </strong> How can we
         leverage such a model to help an individual achieve their goals more
-        efficiently and more satisfyingly, and reach their full potential? We
+        efficiently and more satisfyingly, and reach their full potential? I
         think there are several promising applications of highly accurate user
         models:
       </p>
@@ -173,7 +173,7 @@ export default function ImpersonaEnv() {
           surface inconsistencies between your stated and revealed preferences,
           or compare how versions of the model trained on different periods of
           your life diverge. This makes the user model a tool for
-          self-understanding, not just a proxy for delegation. We find this
+          self-understanding, not just a proxy for delegation. I find this
           direction super cool and promising. We are on a constant quest to
           understand how our experiences shape us, and observing how a model
           internalizes those same experiences gives us a new lens on that
@@ -208,7 +208,7 @@ export default function ImpersonaEnv() {
       </p>
 
       <p>
-        To instantiate this, we put a simulation of me in an environment and let
+        To instantiate this, I put a simulation of me in an environment and let
         a personal assistant model interact with it indefinitely to learn my
         situational preferences and collaboration patterns. It boils down
         roughly to the following algorithm:
@@ -221,7 +221,7 @@ export default function ImpersonaEnv() {
         the user model it learns from, so the user model has to be faithful. The
         environment has to be calibrated to the kinds of interactions I actually
         have with an assistant, or else the assistant learns preferences for
-        situations that never come up. Below we walk through each part: training
+        situations that never come up. Below I walk through each part: training
         the user model, then training the assistant model (including the
         challenges along the way and the evals we built), followed by results.
       </p>
@@ -570,8 +570,10 @@ export default function ImpersonaEnv() {
         of each person's data but can't look at its contents. The second is the{' '}
         <strong>base model</strong>. There are many more open-weight models than when I ran
         these experiments, but most are post-trained heavily for agentic use.
-        For a user model, that's not the behavior I'm after. I'd like to try model families with more balanced post-training,
-        and much larger models than 8B.
+        For a user model, that's not the behavior I'm after, and I'm not sure
+        how it interacts with fine-tuning on someone's personal messages. I'd
+        like to try model families with more balanced post-training, and much
+        larger models than 8B.
       </p>
 
       <h2 id="assistant-model">Training a good assistant model</h2>
