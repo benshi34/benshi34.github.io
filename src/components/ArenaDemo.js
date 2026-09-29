@@ -170,7 +170,9 @@ function ArenaDemo() {
           while (!cancelled && (a < turn.aWords.length || b < turn.bWords.length)) {
             a = Math.min(turn.aWords.length, a + stepA);
             b = Math.min(turn.bWords.length, b + stepB);
-            setS((p) => ({ ...p, a, b }));
+            const shownA = a;
+            const shownB = b;
+            setS((p) => ({ ...p, a: shownA, b: shownB }));
             await wait(50);
           }
           if (cancelled) return;
