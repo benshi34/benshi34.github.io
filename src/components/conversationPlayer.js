@@ -86,19 +86,76 @@ const el = (tag, cls, text) => {
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
+// Keeps a scrolling log pinned to its newest text, but lets the reader take
+// over: any scroll gesture (wheel, touch, scrollbar grab, keys) pauses the
+// follow immediately, and it resumes once they are back at the bottom.
+// Reacting to the gesture, not just the resulting position, matters because
+// new text can arrive before the browser reports the scroll.
+export function createFollow(el) {
+  let following = true;
+  let pausedAt = 0;
+  const atBottom = () => el.scrollHeight - el.scrollTop - el.clientHeight < 24;
+  const pause = () => {
+    following = false;
+    pausedAt = Date.now();
+  };
+  const onWheel = (e) => {
+    if (e.deltaY < 0) pause();
+  };
+  const onKey = (e) => {
+    if (['ArrowUp', 'PageUp', 'Home'].includes(e.key)) pause();
+  };
+  const onScroll = () => {
+    if (atBottom()) following = true;
+  };
+  const onRelease = () => {
+    if (atBottom()) following = true;
+  };
+  el.addEventListener('wheel', onWheel, { passive: true });
+  el.addEventListener('touchstart', pause, { passive: true });
+  el.addEventListener('pointerdown', pause);
+  el.addEventListener('keydown', onKey);
+  el.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('pointerup', onRelease);
+  window.addEventListener('touchend', onRelease);
+  return {
+    toBottom() {
+      // resume if the reader is back at the bottom, but not in the moment
+      // between a scroll gesture and the scroll it causes
+      if (!following && Date.now() - pausedAt > 300 && atBottom()) {
+        following = true;
+      }
+      if (following) el.scrollTop = el.scrollHeight;
+    },
+    reset() {
+      following = true;
+    },
+    dispose() {
+      el.removeEventListener('wheel', onWheel);
+      el.removeEventListener('touchstart', pause);
+      el.removeEventListener('pointerdown', pause);
+      el.removeEventListener('keydown', onKey);
+      el.removeEventListener('scroll', onScroll);
+      window.removeEventListener('pointerup', onRelease);
+      window.removeEventListener('touchend', onRelease);
+    },
+  };
+}
+
 export function createPlayer(container, options = {}) {
   const { thinkLabel = 'thinking', clipThink = 150, clipReply = 260 } = options;
+
+  const follow = createFollow(container);
 
   const player = {
     cancelled: false,
     cancel() {
       this.cancelled = true;
+      follow.dispose();
     },
   };
 
-  const scroll = () => {
-    container.scrollTop = container.scrollHeight;
-  };
+  const scroll = () => follow.toBottom();
 
   async function addThink(text) {
     const bubble = el('div', 'imp-think');
@@ -227,6 +284,7 @@ export function createPlayer(container, options = {}) {
     await sleep(startDelay);
     while (!player.cancelled) {
       container.innerHTML = '';
+      follow.reset();
       await player.play(messages);
       if (player.cancelled) return;
       await sleep(2600);

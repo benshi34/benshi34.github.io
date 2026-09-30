@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import data from '../data/arena-demo.json';
-import { prefersReducedMotion } from './conversationPlayer';
+import { createFollow, prefersReducedMotion } from './conversationPlayer';
 
 // A replay of real battles from the blind arena, restyled after the real
 // interface: two columns labelled only "Model A" and
@@ -202,12 +202,23 @@ function ArenaDemo() {
     };
   }, [visible, cycle, reduced]);
 
-  // Keep each column pinned to the newest text while it streams.
+  // Keep each column pinned to the newest text while it streams, unless the
+  // reader scrolls it; scrolling back to the bottom resumes.
+  // The columns are re-created for each battle, so attach to the new ones.
+  const follow = useRef({});
+  useEffect(() => {
+    const a = colA.current && createFollow(colA.current);
+    const b = colB.current && createFollow(colB.current);
+    follow.current = { a, b };
+    return () => {
+      if (a) a.dispose();
+      if (b) b.dispose();
+    };
+  }, [s.battle]);
+
   useEffect(() => {
     if (s.phase !== 'streaming' && !s.sent) return;
-    [colA, colB].forEach((r) => {
-      if (r.current) r.current.scrollTop = r.current.scrollHeight;
-    });
+    Object.values(follow.current).forEach((f) => f && f.toBottom());
   }, [s.a, s.b, s.sent, s.phase, s.turn]);
 
   const battle = BATTLES[s.battle];
