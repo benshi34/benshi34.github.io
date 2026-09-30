@@ -847,6 +847,20 @@ export default function ImpersonaEnv() {
         <a href="mailto:benshi@stanford.edu">benshi@stanford.edu</a>.
       </p>
 
+      <h2 id="acknowledgements">Acknowledgements</h2>
+
+      <p>
+        Thank you to Hunter Lightman, Stephen Dong, Omar Shaikh, Jonathan Ward,
+        Victor Barres, Diyi Yang, Karthik Narasimhan, Daphne Ippolito, Sherry
+        Wu, Serina Chang and Daniel Fried for discussions that helped shape the
+        project. And thank you to{' '}
+        <strong>
+          <Ref href="https://modal.com">Modal</Ref>
+        </strong>{' '}
+        for generously
+        sponsoring the compute for this exploration!
+      </p>
+
       <h2 id="citation">Citation</h2>
 
       <p>If you found this useful, feel free to cite this blog post!</p>
