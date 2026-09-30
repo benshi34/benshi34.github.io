@@ -1749,6 +1749,11 @@ h2 {
   background-color: #fafafa;
 }
 
+/* an aside inside a list item spans the full column, not the indented text */
+.post-body li > .post-aside {
+  margin-left: -1.4rem;
+}
+
 .post-aside > summary {
   display: flex;
   align-items: center;

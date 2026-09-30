@@ -340,6 +340,35 @@ export default function ImpersonaEnv() {
           unsupported motivations, the annotator applies strict skip rules,
           abstaining whenever the reasoning cannot be inferred without
           fabrication.
+          <details className="post-aside">
+            <summary>
+              <span className="post-aside-tag">Aside</span>
+              But wait…
+            </summary>
+            <div className="post-aside-body">
+              <p>
+                Although we do find that adding the reconstructed thoughts and
+                the relationship summaries greatly helps the coherence of the
+                user model (the original IMPersona paper is roughly the baseline
+                without them), it's natural to wonder: what new information does
+                the annotator actually introduce, if it only sees the same
+                conversation the model is trained on? And what if it doesn't
+                recover the reasoning that actually produced the message?
+              </p>
+              <p>
+                My intuition here is that data augmentation serves to offload
+                necessary multi-hop inference to dataset-creation time, and
+                shortens the implicit computation the model has to learn to map
+                context to the gold output, which should make credit assignment
+                during training much easier. The thought writes that reasoning
+                out right before the reply, instead of leaving the model to infer
+                it. I'm also pretty sure this has to do with the model size I'm
+                working with: an 8B model may not reliably learn that latent
+                inference from x → y alone, while larger models might already
+                perform most of it implicitly.
+              </p>
+            </div>
+          </details>
         </li>
       </ul>
 
