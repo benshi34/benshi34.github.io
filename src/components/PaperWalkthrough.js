@@ -66,6 +66,8 @@ function SlideTraining() {
 }
 
 function SlideTest() {
+  // One exchange: the friend sees a single reply, guesses, and then we
+  // reveal which of the two actually sent it.
   return (
     <div className="pw-stage pw-test">
       <div className="pw-panel" aria-hidden="true">
@@ -75,6 +77,9 @@ function SlideTest() {
         </span>
         <span className="pw-bubble pw-me pw-answer">
           honestly just stayed in lol
+        </span>
+        <span className="pw-guess">
+          Their guess: <strong>the real person</strong>
         </span>
       </div>
 
@@ -87,14 +92,16 @@ function SlideTest() {
 
       <span className="pw-flow pw-flow-both" aria-hidden="true" />
 
-      <div className="pw-candidates">
-        <div className="pw-cand pw-cand-a">
+      <div className="pw-candidates" aria-hidden="true">
+        <span className="pw-candidates-label">One of them replies</span>
+        <div className="pw-cand">
           <span className="pw-cand-dot" />
           The real person
         </div>
-        <div className="pw-cand pw-cand-b">
+        <div className="pw-cand pw-cand-sent">
           <span className="pw-cand-dot" />
           Their fine-tuned clone
+          <span className="pw-cand-note">sent it</span>
         </div>
       </div>
     </div>
@@ -106,13 +113,13 @@ const SLIDES = [
     title: "Fine-tune a model on one person's messages",
     Body: SlideTraining,
     caption:
-      "We supervised-fine-tune Llama-3.1-8B-Instruct on an individual's message history, and pair it with a hierarchical memory over that history, so that given a conversation it replies the way they would.",
+      "We supervised-fine-tune Llama-3.1-8B-Instruct on an individual's message history, so that given a conversation it replies the way they would.",
   },
   {
     title: 'Ask the people who know them to tell them apart',
     Body: SlideTest,
     caption:
-      'In blind conversations, people who know the individual chat with either the real person or the model, without knowing which, then guess whether they were talking to a human or an AI.',
+      'In blind conversations, people who know the individual chat with either the real person or the model, without knowing which, then guess whether they were talking to a human or an AI. Our best model was mistaken for the real person in 44% of conversations, versus 25% for the best prompting approach.',
   },
 ];
 
@@ -120,8 +127,8 @@ function PaperWalkthrough() {
   return (
     <Walkthrough
       slides={SLIDES}
-      kicker="IMPersona"
-      label="How IMPersona worked"
+      kicker="Impersona"
+      label="How Impersona worked"
       finalAction={
         <a
           className="pw-nav pw-nav-primary"

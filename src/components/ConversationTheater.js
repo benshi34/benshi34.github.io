@@ -1,13 +1,16 @@
 import { useEffect, useRef } from 'react';
 import conversations from '../data/impersona-conversations.json';
 import {
-  cleanThink,
   clip,
   createPlayer,
   prefersReducedMotion,
   prepareMessages,
+  SIGNAL_TAG,
   stripMd,
+  thoughtPieces,
 } from './conversationPlayer';
+
+const HERO_PLAYER = { signals: true, clipThink: 90, thinkWordMs: 34 };
 
 export function Quote({ quote }) {
   return (
@@ -33,7 +36,18 @@ function StaticColumn({ convo }) {
             {m.think && (
               <div className="imp-think">
                 <span className="imp-think-label">thinking</span>
-                <span className="imp-think-body">{clip(cleanThink(m.think), 150)}</span>
+                <span className="imp-think-body">
+                  {thoughtPieces(m.think, m.signal, HERO_PLAYER.clipThink).map((p, k) =>
+                    p.signal ? (
+                      <mark className="imp-signal" key={k}>
+                        {p.text}
+                      </mark>
+                    ) : (
+                      p.text
+                    )
+                  )}
+                </span>
+                {m.signal && <span className="imp-signal-tag">{SIGNAL_TAG}</span>}
               </div>
             )}
             {m.quote && <Quote quote={m.quote} />}
@@ -56,7 +70,7 @@ function Column({ convo, animate }) {
 
   useEffect(() => {
     if (!animate || !logRef.current) return undefined;
-    const player = createPlayer(logRef.current);
+    const player = createPlayer(logRef.current, HERO_PLAYER);
     // Stagger the columns so they don't move in lockstep.
     player.loop(prepareMessages(convo.messages), Math.random() * 1400);
     return () => player.cancel();

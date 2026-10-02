@@ -77,6 +77,24 @@ export function clip(text, n) {
   return cut.slice(0, sp > 0 ? sp : n) + '…';
 }
 
+// Split a thought into display pieces. A long thought is cut to its opening,
+// but if it carries feedback on the assistant (`signal`, a verbatim span of
+// the thought), that span is always kept and marked, with an ellipsis
+// standing in for anything skipped.
+export function thoughtPieces(think, signal, headLen) {
+  const text = cleanThink(think);
+  const at = signal ? text.indexOf(signal) : -1;
+  if (at === -1) return [{ text: clip(text, headLen) }];
+  const before = text.slice(0, at).trimEnd();
+  const pieces = [];
+  if (before) pieces.push({ text: `${clip(before, headLen)} ` });
+  pieces.push({ text: signal, signal: true });
+  if (at + signal.length < text.length) pieces.push({ text: ' …' });
+  return pieces;
+}
+
+export const SIGNAL_TAG = '→ reward signal';
+
 const el = (tag, cls, text) => {
   const n = document.createElement(tag);
   if (cls) n.className = cls;
@@ -143,7 +161,14 @@ export function createFollow(el) {
 }
 
 export function createPlayer(container, options = {}) {
-  const { thinkLabel = 'thinking', clipThink = 150, clipReply = 260 } = options;
+  const {
+    thinkLabel = 'thinking',
+    clipThink = 150,
+    clipReply = 260,
+    // mark the feedback span in each thought (hero only)
+    signals = false,
+    thinkWordMs = 18,
+  } = options;
 
   const follow = createFollow(container);
 
@@ -157,22 +182,38 @@ export function createPlayer(container, options = {}) {
 
   const scroll = () => follow.toBottom();
 
-  async function addThink(text) {
+  async function addThink(text, signal) {
     const bubble = el('div', 'imp-think');
     bubble.appendChild(el('span', 'imp-think-label', thinkLabel));
     const body = el('span', 'imp-think-body');
     bubble.appendChild(body);
     container.appendChild(bubble);
 
+    const pieces = signals
+      ? thoughtPieces(text, signal, clipThink)
+      : [{ text: clip(cleanThink(text), clipThink) }];
+
     // The thought is context, not the performance — reveal it quickly.
-    const words = clip(cleanThink(text), clipThink).split(' ');
-    for (let i = 0; i < words.length; i += 1) {
-      if (player.cancelled) return;
-      body.textContent += (i ? ' ' : '') + words[i];
-      scroll();
-      await sleep(18);
+    let marked = false;
+    for (const piece of pieces) {
+      const target = piece.signal ? el('mark', 'imp-signal') : body;
+      if (piece.signal) body.appendChild(target);
+      const words = piece.text.split(' ');
+      for (let i = 0; i < words.length; i += 1) {
+        if (player.cancelled) return;
+        if (piece.signal) target.textContent += (i ? ' ' : '') + words[i];
+        else target.append((i ? ' ' : '') + words[i]);
+        scroll();
+        await sleep(thinkWordMs);
+      }
+      if (piece.signal) {
+        bubble.appendChild(el('span', 'imp-signal-tag', SIGNAL_TAG));
+        scroll();
+        marked = true;
+      }
     }
-    await sleep(320);
+    // Hold on a flagged thought long enough to read the highlight.
+    await sleep(marked ? 1800 : 320);
   }
 
   function addQuote(quote) {
@@ -244,7 +285,7 @@ export function createPlayer(container, options = {}) {
       if (player.cancelled) return;
       const m = messages[i];
       if (m.role === 'user') {
-        if (m.think && showThoughts) await addThink(m.think);
+        if (m.think && showThoughts) await addThink(m.think, m.signal);
         if (player.cancelled) return;
         if (m.quote) addQuote(m.quote);
         await typeUser(m.text);

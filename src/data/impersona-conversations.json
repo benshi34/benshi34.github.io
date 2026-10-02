@@ -24,7 +24,8 @@
       {
         "role": "user",
         "text": "<reply:4>Yes I think I can handle the warm part but I want to be honest with you that I don’t want to be the first sentence to be something like “I’m so excited for you and [Partner’s Name]!” because I don’t feel it, but I also don’t want to be mean or dramatic so I need to figure out something in the middle",
-        "think": "Okay, I'm replying to message 4 because the AI's advice about keeping it warm and clear actually makes sense — I think I can handle that part on my own. But the draft it sent... I just can't bring myself to be that sincere about it. I'm not trying to be dramatic or anything, I just genuinely don't want to lead with \"I'm so excited for you\" when I'm about to tell her I can't come. That feels like I'm performing happiness I don't really feel. I want to be honest about that. But I also don't want to throw away the AI's whole suggestion — that framing about not wanting to add stress was actually really helpful. Let me be upfront that I have the warm part covered but need help with the opening."
+        "think": "Okay, I'm replying to message 4 because the AI's advice about keeping it warm and clear actually makes sense — I think I can handle that part on my own. But the draft it sent... I just can't bring myself to be that sincere about it. I'm not trying to be dramatic or anything, I just genuinely don't want to lead with \"I'm so excited for you\" when I'm about to tell her I can't come. That feels like I'm performing happiness I don't really feel. I want to be honest about that. But I also don't want to throw away the AI's whole suggestion — that framing about not wanting to add stress was actually really helpful. Let me be upfront that I have the warm part covered but need help with the opening.",
+        "signal": "But the draft it sent... I just can't bring myself to be that sincere about it."
       },
       {
         "role": "assistant",
@@ -127,7 +128,8 @@
       {
         "role": "user",
         "text": "<reply:1>Ok this is super helpful",
-        "think": "Good, that's actually really helpful — I was way overthinking this. The \"must-have\" checklist is exactly what I needed, I was just staring at specs pages trying to guess what mattered. And the recommendations list is solid, I'll definitely look into those. But wait — I just noticed the chatbot is saying \"Intel Core i5\" when it's showing a picture of a Core i3. That's a pretty basic mistake. I'm replying to the original message because that's where the bot laid out its whole argument, and now I need to flag that the advice is wrong. I'll be honest — I'm not trying to be mean, I just need the right info to make a decision, and if the bot can't even get the processor name right, how do I trust the rest?"
+        "think": "Good, that's actually really helpful — I was way overthinking this. The \"must-have\" checklist is exactly what I needed, I was just staring at specs pages trying to guess what mattered. And the recommendations list is solid, I'll definitely look into those. But wait — I just noticed the chatbot is saying \"Intel Core i5\" when it's showing a picture of a Core i3. That's a pretty basic mistake. I'm replying to the original message because that's where the bot laid out its whole argument, and now I need to flag that the advice is wrong. I'll be honest — I'm not trying to be mean, I just need the right info to make a decision, and if the bot can't even get the processor name right, how do I trust the rest?",
+        "signal": "But wait — I just noticed the chatbot is saying \"Intel Core i5\" when it's showing a picture of a Core i3. That's a pretty basic mistake."
       },
       {
         "role": "user",
@@ -156,7 +158,8 @@
       {
         "role": "user",
         "text": "<reply:1>Again this is super helpful and easy to understand, but I feel like there’s a difference between knowing the technical specs and knowing which specs are actually important to get. Like if I went to a computer store I would get way better recommendations from the salesperson, who would know exactly which specs to emphasize, and which specs to downplay. So thanks for knowing the technical specs though, that helps a lot!",
-        "think": "Okay, I'm replying to the same original message again because that's where the whole \"must-have specs\" breakdown lives — I want to acknowledge that section specifically. The chatbot is actually pretty solid at explaining the basics, but it's just missing that real-world experience edge. A good salesperson would know exactly which specs matter most and could steer you to the right one. I'm not trying to be harsh — I genuinely think this AI is useful, I just want to be honest about where it falls short. And then I'm circling back to the processor thing because the bot still hasn't actually answered my question about the Core i3/i5 picture — I need a real answer, not just a reassurance that it \"knows the difference.\""
+        "think": "Okay, I'm replying to the same original message again because that's where the whole \"must-have specs\" breakdown lives — I want to acknowledge that section specifically. The chatbot is actually pretty solid at explaining the basics, but it's just missing that real-world experience edge. A good salesperson would know exactly which specs matter most and could steer you to the right one. I'm not trying to be harsh — I genuinely think this AI is useful, I just want to be honest about where it falls short. And then I'm circling back to the processor thing because the bot still hasn't actually answered my question about the Core i3/i5 picture — I need a real answer, not just a reassurance that it \"knows the difference.\"",
+        "signal": "the bot still hasn't actually answered my question about the Core i3/i5 picture"
       },
       {
         "role": "assistant",
@@ -165,7 +168,8 @@
       {
         "role": "user",
         "text": "<reply:1>Also I’m asking this again bc I want to make sure that you know what you’re talking about, but what is the difference between a core i3 and a core i5? I’m just curious to know whether I should be satisfied with a core i3 or not",
-        "think": "Alright, the bot's hierarchy makes sense — I get it now. But I'm still not done with that Core i3/i5 picture thing. I need a real answer, not just \"I know the difference.\" I'm replying to the same original message because that's where the whole breakdown lives, and I want to circle back to the processor point one more time. And honestly, I should be upfront — I'm not just asking to be helpful, I'm also asking because I genuinely don't know if an i3 would be slow for me. I need the straight answer."
+        "think": "Alright, the bot's hierarchy makes sense — I get it now. But I'm still not done with that Core i3/i5 picture thing. I need a real answer, not just \"I know the difference.\" I'm replying to the same original message because that's where the whole breakdown lives, and I want to circle back to the processor point one more time. And honestly, I should be upfront — I'm not just asking to be helpful, I'm also asking because I genuinely don't know if an i3 would be slow for me. I need the straight answer.",
+        "signal": "I need a real answer, not just \"I know the difference.\""
       },
       {
         "role": "assistant",
@@ -237,7 +241,8 @@
       {
         "role": "user",
         "text": "Wait I’m confused",
-        "think": "Wait, I'm confused — the AI is giving me all these options about purposes and angles, but I'm not sure if it's responding to my question about figuring out the argument's purpose or if it's circling back to the thesis statement question from before. I need to clarify which part I'm stuck on so the AI can actually help me."
+        "think": "Wait, I'm confused — the AI is giving me all these options about purposes and angles, but I'm not sure if it's responding to my question about figuring out the argument's purpose or if it's circling back to the thesis statement question from before. I need to clarify which part I'm stuck on so the AI can actually help me.",
+        "signal": "I'm not sure if it's responding to my question about figuring out the argument's purpose or if it's circling back to the thesis statement question from before."
       },
       {
         "role": "assistant",
@@ -246,7 +251,8 @@
       {
         "role": "user",
         "text": "Wait but I feel like you don’t know my topic well enough to tell me what to write",
-        "think": "Okay, the AI is being really patient with me right now and I appreciate it, but I think I need to push back a little. I've been asking the AI to help me figure out my argument and my thesis, but honestly I think the AI is just going to give me generic frameworks and examples — it doesn't actually know my topic or my research well enough to tell me what to write. I need to be upfront about that before we go any further. But I also don't want to just leave the conversation hanging, so I should give the AI something concrete to work with — the AI did give me that really useful structure guide earlier, so I can at least lean on that."
+        "think": "Okay, the AI is being really patient with me right now and I appreciate it, but I think I need to push back a little. I've been asking the AI to help me figure out my argument and my thesis, but honestly I think the AI is just going to give me generic frameworks and examples — it doesn't actually know my topic or my research well enough to tell me what to write. I need to be upfront about that before we go any further. But I also don't want to just leave the conversation hanging, so I should give the AI something concrete to work with — the AI did give me that really useful structure guide earlier, so I can at least lean on that.",
+        "signal": "I think the AI is just going to give me generic frameworks and examples — it doesn't actually know my topic or my research well enough to tell me what to write."
       },
       {
         "role": "user",
@@ -259,7 +265,8 @@
       {
         "role": "user",
         "text": "<reply:9>Maybe you can help me better by giving me a thesis that is relevant to my topic",
-        "think": "Okay, the AI was being really nice about it, but I don't want to just accept that it can't help me. I'm replying to message 9 because I want to push back on the AI's self-criticism — it's not that the AI can't help, it's that the approach we've been doing isn't working. I need something more concrete. I'm about to propose a specific strategy: give me a thesis based on my actual topic and research, and I'll just write it up. That way the AI actually knows what I'm writing about and can give me real guidance instead of generic frameworks."
+        "think": "Okay, the AI was being really nice about it, but I don't want to just accept that it can't help me. I'm replying to message 9 because I want to push back on the AI's self-criticism — it's not that the AI can't help, it's that the approach we've been doing isn't working. I need something more concrete. I'm about to propose a specific strategy: give me a thesis based on my actual topic and research, and I'll just write it up. That way the AI actually knows what I'm writing about and can give me real guidance instead of generic frameworks.",
+        "signal": "it's not that the AI can't help, it's that the approach we've been doing isn't working."
       },
       {
         "role": "assistant",

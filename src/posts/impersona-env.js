@@ -11,7 +11,6 @@ import {
 } from '../components/DataWalkthroughs';
 import CoherenceProblemsWalkthrough from '../components/EvalProblems';
 import EvalFigure from '../components/EvalFigure';
-import InfoTip from '../components/InfoTip';
 import PaperWalkthrough from '../components/PaperWalkthrough';
 import PreferencePairs from '../components/PreferencePairs';
 import SituationHeatmap from '../components/SituationHeatmap';
@@ -20,16 +19,17 @@ import UserModelMap from '../components/UserModelMap';
 
 export const meta = {
   slug: 'impersona-env',
-  title: 'IMPersona-Env: User Models as Environments for Model Personalization',
+  title: 'Impersona-Env: User Models as Environments for Model Personalization',
   author: 'Quan Shi',
   affiliation: 'Stanford University',
   date: 'September 2026',
   description:
-    'We allow a personal assistant model to interact infinitely with a simulation of me to learn complex situational preferences and collaboration patterns.',
+    'In this post we demonstrate how to train better user models through data augmentation, and how to train better chatbots by utilizing the improved user model as a reward signal for training.',
 };
 
 const REFS = {
   impersona: 'https://arxiv.org/abs/2504.04332',
+  gum: 'https://arxiv.org/abs/2505.10831',
 };
 
 function Ref({ href, children }) {
@@ -42,7 +42,7 @@ function Ref({ href, children }) {
 
 const CITE_POST = `@misc{shi2026assistant,
   author       = {Shi, Quan},
-  title        = {IMPersona-Env: User Models as Environments for Model Personalization},
+  title        = {Impersona-Env: User Models as Environments for Model Personalization},
   year         = {2026},
   month        = {September},
   howpublished = {\\url{https://benshi34.github.io/#/blog/impersona-env}},
@@ -58,7 +58,7 @@ const CITE_IMPERSONA = `@article{shi2025impersona,
 }`;
 
 const SECTIONS = [
-  { id: 'useful', label: 'How can we make good user models useful?' },
+  { id: 'useful', label: 'How can we make use of good user models?' },
   { id: 'user-model', label: 'Training a good user model' },
   { id: 'assistant-model', label: 'Training a good assistant model' },
   { id: 'conclusions', label: 'Conclusions' },
@@ -70,9 +70,15 @@ export default function ImpersonaEnv() {
       <div className="post-tldr">
         <p className="post-tldr-body">
           <span className="post-tldr-label">TLDR:</span>{' '}
-          We allow a personal assistant model to interact infinitely with a{' '}
-          <em>simulation of me</em> to learn complex situational preferences and
-          collaboration patterns.
+          In this post we demonstrate how to train better user models through
+          data augmentation, and how to train better chatbots by utilizing the
+          improved user model as a reward signal for training. Just like how a
+          human personal assistant learns from extensive trial and error +
+          feedback through assisting you in many different situations, a
+          chatbot can get the same trial and error and feedback from a{' '}
+          <em>simulation of you</em>, at a scale no real person could provide.
+          Our fine-tuned assistant (Qwen3.5-27B) matches a ~15x larger model
+          (Qwen3.5-397B) in a two-week blind test on my everyday queries.
         </p>
         <p className="post-tldr-contact">
           Please reach out at{' '}
@@ -84,132 +90,107 @@ export default function ImpersonaEnv() {
       <ConversationTheater
         caption={
           'Three conversations running at once between my user model (blue) and ' +
-          'a chat assistant (grey). Its private reactions to each reply are what ' +
-          'become training signal.'
+          'a chat assistant (grey). Before each message, the user model thinks ' +
+          'privately; highlighted thoughts are feedback on the last reply, and ' +
+          'each one becomes a preference pair for training the assistant.'
         }
       />
 
       <Toc items={SECTIONS} />
 
-      <h2 id="useful">How can we make good user models useful?</h2>
+      <h2 id="useful">How can we make use of good user models?</h2>
 
       <p>
-        In April of 2025 we released a paper called{' '}
-        <Ref href={REFS.impersona}>IMPersona</Ref>, where we trained a model to
+        In April of 2025 (which seemed like eons ago) we released a paper called{' '}
+        <Ref href={REFS.impersona}>Impersona</Ref>, where we trained a model to
         replicate a specific individual's textual outputs to the point where
         people who knew that individual often couldn't tell the model apart
-        from the real person. <PaperWalkthrough /> Since then it has become
-        easier and easier to build complex models from our personal data, as
-        models improve on both sides of the pipeline: as the simulator being
-        fine-tuned, and as the annotator that recovers the context,
-        relationships, and latent reasoning that raw personal data leaves
-        implicit. Forming complex representations of human preferences, desires
-        and values from our messages, our screen activity, the things we click
-        on and the things we ignore could be a tremendous advancement in how
-        models understand and collaborate with humans to maximize human
-        agency, wellbeing, and output.
+        from the real person. <PaperWalkthrough /> This experience, as well as
+        other seminal works at the time such as{' '}
+        <Ref href={REFS.gum}>GUM</Ref>, got me incredibly excited for user
+        models that could greatly improve the ways in which humans collaborate
+        with models.
       </p>
 
+      <div className="post-note">
+        A useful thing to disambiguate here is the definition of the phrase
+        &ldquo;user model,&rdquo; which in my experience has acquired many
+        related definitions over its lifespan. Here, I define a user model as a
+        model that, given any context, can replicate the output of a specific
+        person: what they would say, do, or think in that situation.
+      </div>
 
       <p>
-        As we grow the capability to build models of individual decision making,
-        one big question arises:{' '}
+        It must be that a model that is able to replicate your actions surely{' '}
+        <em>understands</em> you in a way that is markedly complex, perhaps
+        unparalleled. Yet to me, it hasn't been clear how to leverage that to
+        build interactions that feel as effortless as talking to someone that
+        truly understands your entire essence. Someone who knows what you need,
+        when you need it, how to get it, and when you'd rather figure it out
+        yourself. Someone who can tell from how you say hello that something's
+        off, who knows when to push you and when to leave you be, who remembers
+        what you were worried about last week and asks how it went. The kind of
+        understanding you usually only get from a parent, or from a friend who
+        has known you for years.
+      </p>
+
+      <p>
         <strong>
-          how can we best utilize accurate{' '}
-          <span className="post-term">user models</span>
-          <InfoTip label="What I mean by user model">
-            People use &ldquo;user model&rdquo; to mean different things. Here,
-            a user model is a model that, given any context, can replicate the
-            output of a target user: what that specific person would say, do, or
-            think in that situation.
-          </InfoTip>
-          ?
-        </strong> How can we
-        leverage such a model to help an individual achieve their goals more
-        efficiently and more satisfyingly, and reach their full potential? I
-        think there are several promising applications of highly accurate user
-        models:
+          How can we use strong user models to build interactions like these?
+        </strong>{' '}
+        It helps to look at how the person I just described got that way. They
+        do two things well: in the moment, they act on what you want without
+        making you spell it out, and they learned to do that over years, by
+        getting things a little wrong, seeing how you reacted, and adjusting. A
+        user model can give an assistant both, at two different points:
       </p>
 
       <ol>
         <li>
-          <strong>It allows an agent to faithfully act on our behalf.</strong>{' '}
-          Given a model that approximates a user's decisions at any given
-          context/state, an agent can query it in place of the user whenever it
-          hits a decision point it would otherwise escalate. This has several
-          implications: (a) as agent rollouts get longer and more parallel, the
-          number of decisions requiring human input grows with the amount of
-          work delegated, and a user model greatly the human as the bottleneck
-          on throughput; (b) alignment of actions with individual-level values
-          makes agents more resistant to hijacking, phishing, manipulation; and
-          (c) a user model you train yourself is an explicit artifact you can
-          audit, correct, version, and carry across providers, giving you
-          sovereignty over your own representation.
+          <strong>
+            At inference time, the assistant can ask the user model instead of
+            asking you.
+          </strong>{' '}
+          This is the in-the-moment half, and it is close in spirit to prior
+          work like GUM. Whenever an agent hits a decision it would otherwise
+          bring to you (which option, how much to spend, whether something is
+          worth interrupting you for), it can query a model of you instead, so
+          you spend less effort packaging and presenting what you want. This
+          matters more as agents run longer and in parallel: the number of
+          decisions that need you grows with the work you delegate, and you
+          quickly become the bottleneck. An agent that acts on your values is
+          also harder to hijack, phish, or manipulate.
         </li>
         <li>
           <strong>
-            It lets us sample durably from a user's action and value
-            distribution in ways we could never do with the actual human.
+            At training time, the user model can stand in for you as the
+            environment and the reward.
           </strong>{' '}
-          This is something you cannot do with the actual human. A human's
-          responses are path-dependent: each query changes their state through
-          anchoring on previous answers, or simply fatigue, and the number of
-          queries they will tolerate is small. An LLM-based user model is
-          stateless, so we can sample it repeatedly from the same context,
-          evaluate counterfactuals by perturbing that context, and scale the
-          number of queries arbitrarily. In effect, the user's preferences
-          become a queryable function. This is especially important in today's
-          training paradigms, where RL requires reward queries at a scale no
-          individual human could ever provide.
-        </li>
-        <li>
-          <strong>
-            It allows a user to interact with an externalized model of
-            themselves.
-          </strong>{' '}
-          A user model is an alternative internalization of the same experiences
-          the user has lived through, and unlike your own cognition, you can
-          query it directly: ask how you would act in a given context and why,
-          surface inconsistencies between your stated and revealed preferences,
-          or compare how versions of the model trained on different periods of
-          your life diverge. This makes the user model a tool for
-          self-understanding, not just a proxy for delegation. I find this
-          direction super cool and promising. We are on a constant quest to
-          understand how our experiences shape us, and observing how a model
-          internalizes those same experiences gives us a new lens on that
-          question, one we can inspect and perturb in ways we never could with
-          our own minds.
+          This is the years-of-practice half. A friend learns you through
+          thousands of interactions, but no model can get that many from you:
+          you'd never sit through them, and each one changes you, through
+          anchoring on earlier answers or simply fatigue. A user model is
+          stateless, so an assistant can practice on it as often as it needs,
+          replay the same moment, and try something different to see how you'd
+          react. In effect, your preferences become something an assistant can
+          learn from by trial and error, which is exactly what RL needs, at a
+          scale no individual could ever provide.
         </li>
       </ol>
 
       <p>
-        This project combines applications (1) and (2). It asks a simple
+        This project focuses on the training-time use. It asks a simple
         question:{' '}
         <strong>
           can a chat assistant learn from us the way a human assistant would?
         </strong>{' '}
-        A good human assistant gets better at working with you by seeing
-        you across a wide range of situations, and every interaction carries
-        rich feedback: not just whether you were satisfied, but how you pushed
-        back, what you let slide, and what you had to explain twice.
+        Can it, through repeated interaction, pick up detailed behavioral
+        conditioning until it knows what you need without any input from you?
       </p>
 
       <p>
-        Current models can't learn this way from a real person. They are much
-        less sample-efficient than humans and generalize less from each
-        interaction, so they need far more interactions than any one person
-        could provide, and for the reasons in (2), a real person can't be
-        sampled at that scale anyway. A sufficiently accurate user model removes
-        this constraint. Because it can be queried durably, it can act as both
-        the environment and the source of reward, supporting as many
-        interactions as training needs. And because it has learned from a large
-        history of my own messages, the feedback it gives retains much of the
-        richness of mine.
-      </p>
-
-      <p>
-        To instantiate this, I put a simulation of me in an environment and let
-        a personal assistant model interact with it indefinitely to learn my
+        To instantiate this, I put my user model in an environment and let a
+        personal assistant model interact with it indefinitely to learn my
         situational preferences and collaboration patterns. It boils down
         roughly to the following algorithm:
       </p>
@@ -217,13 +198,14 @@ export default function ImpersonaEnv() {
       <AlgorithmSlides />
 
       <p>
-        Each part depends on the others. The assistant can only be as good as
-        the user model it learns from, so the user model has to be faithful. The
-        environment has to be calibrated to the kinds of interactions I actually
-        have with an assistant, or else the assistant learns preferences for
-        situations that never come up. Below I walk through each part: training
-        the user model, then training the assistant model (including the
-        challenges along the way and the evals we built), followed by results.
+        There are a lot of moving pieces here. The assistant can only be as
+        good as the user model it learns from, so the user model has to be
+        faithful. The environment has to be calibrated to the kinds of
+        interactions I actually have with an assistant, or else the assistant
+        learns preferences for situations that never come up. Below I walk
+        through each part: training the user model, then training the
+        assistant model (including the challenges along the way and the evals
+        we built), followed by results.
       </p>
 
       <details className="post-aside">
@@ -266,7 +248,7 @@ export default function ImpersonaEnv() {
               We interact with them repeatedly and gradually build a model of how
               they behave across situations. A user model makes this kind of
               learning possible at a scale no real human could support, which is
-              exactly application (2) above.
+              exactly the training-time use above.
             </li>
           </ul>
 
@@ -283,14 +265,14 @@ export default function ImpersonaEnv() {
       <h2 id="user-model">Training a good user model</h2>
 
       <p>
-        The user model is SFT'd over my text message history.
-        The pipeline condenses to four steps: export my message
-        history, segment it into conversations, convert each of my replies into
-        a next-message prediction example conditioned on the preceding context,
-        and SFT Llama-3.1-8B on the result. The training objective
-        is unchanged from IMPersona; the gains since come almost entirely from
-        the data, specifically from recovering context that raw transcripts
-        leave implicit.
+        To train the user model, I SFT it over my text message history. The
+        pipeline condenses to four steps: export my message history, segment
+        it into conversations, convert each of my replies into a next-message
+        prediction example conditioned on the preceding context, and SFT
+        Llama-3.1-8B on the result. The training objective is unchanged from
+        Impersona. However, we find we're able to produce much more coherent
+        and accurate user models if we implement two specific data
+        augmentation strategies:
       </p>
 
       <details className="post-aside">
@@ -349,7 +331,7 @@ export default function ImpersonaEnv() {
               <p>
                 Although we do find that adding the reconstructed thoughts and
                 the relationship summaries greatly helps the coherence of the
-                user model (the original IMPersona paper is roughly the baseline
+                user model (the original Impersona paper is roughly the baseline
                 without them), it's natural to wonder: what new information does
                 the annotator actually introduce, if it only sees the same
                 conversation the model is trained on? And what if it doesn't
@@ -372,28 +354,23 @@ export default function ImpersonaEnv() {
         </li>
       </ul>
 
-      <p>
-        Across the pipeline, filtering is deliberately aggressive: any example
-        whose context or reasoning cannot be recovered is dropped rather than
-        kept.
-      </p>
-
       <h3 className="post-subhead">Evaluating the user model</h3>
 
       <EvalFigure />
 
       <p>
-        Evaluation is hard. Without a reliable metric, it's hard to
-        hillclimb in any structured way, or to attribute an improvement to any
-        single intervention. We're also operating in an unusual space: an
-        eval built around one person's data may not transfer to anyone
-        else, and optimizing for several people at once raises a whole set of
-        privacy concerns. In practice, you have access to the shape of the data
-        you want to build evals around, but not its contents. I'm super
-        interested in this space of <strong>Federated Evaluation</strong> problems, and hope to
-        write more about it in the future! The approach below
-        is a first pass, and improving it is an active direction, but it
-        splits evaluation into two parts.
+        Evaluation is hard. Without a reliable metric, it's hard to hillclimb
+        in any structured way, or to attribute an improvement to any single
+        intervention. We're also operating in an unusual space: an eval built
+        around one person's data may not transfer to anyone else, and
+        optimizing for several people at once raises a whole set of privacy
+        concerns. In practice, you have access to the shape of the data you
+        want to build evals around, but not its contents. I'm super interested
+        in this space of <strong>Federated Evaluation</strong> problems. It's
+        going to become extremely important as we unlock use cases that
+        necessitate deep integration of personal data into user models. The
+        approach below is a first pass, and improving it is an active
+        direction. I've split evaluation into two parts:
       </p>
 
       <ul>
@@ -694,19 +671,17 @@ export default function ImpersonaEnv() {
       <BeforeAfter />
 
       <p>
-        Crucially, what the assistant learns is not a flat rule. In the grid
-        below, each row is a kind of situation, each column is a feature of
-        the assistant's replies, and the color shows how that feature changed
-        with training. Some shifts are broad but uneven: replies lose their
-        lists almost everywhere, yet lists nearly vanish from therapy and
-        health conversations while car trouble keeps most of them. Other
-        features move in opposite directions depending on the situation.
-        Replies about stress and etiquette actually got longer. Empathetic
-        openers became more common in acute support and conflict but rarer in
-        homesickness and tech help. Asking several questions at once dropped
-        sharply for homesickness and tech help but rose for motivation and
-        stress, and offering options fell in most emotional situations but
-        rose for nutrition, research and planning.
+        In the grid below, we can see the personalizations adaptations vary by
+        domain, creating a complex cross product of behaviors that is very
+        difficult to learn in traditional representation. Some shifts are broad
+        but uneven: replies lose their lists almost everywhere, yet lists
+        nearly vanish from therapy and health conversations while car trouble
+        keeps most of them. Other features move in opposite directions
+        depending on the situation. Replies about stress and etiquette actually
+        got longer. Empathetic openers became more common in acute support and
+        conflict but rarer in homesickness and tech help. Asking several
+        questions at once dropped sharply for homesickness and tech help but
+        rose for motivation and stress.
       </p>
 
       <SituationHeatmap />
@@ -822,26 +797,20 @@ export default function ImpersonaEnv() {
       <h2 id="conclusions">Conclusions</h2>
 
       <p>
-        If we define a user model as a model of a person's conditional output
-        distribution (aka, one that can predict what they would do given any
-        context), I think a perfect one is extremely difficult. The problem is
-        fundamentally partially observable: most of the state behind any given
+        If we define a user model as a model that can predict what a user would
+        do given any context, I think a perfect one is extremely difficult. Any
+        given user is partially observable. Most of the state behind any given
         decision is never logged, like a conversation someone had in person an
-        hour ago, what they read that morning, or how tired they are. It's also
-        non-stationary, since humans constantly update with respect to an
-        environment that models do not have access to (at least in current
-        societal infrastructure). Human decision making also carries significant
-        variance, which takes proportionally more data to model well. This data
-        inefficiency is unfortunate as the amount of human data we record is
-        highly, highly asymmetric.
+        hour ago, what they read that morning, or how tired they are. Humans
+        also constantly update with respect to an environment that models do
+        not have access to, at least in the ways that humans currently interact
+        with technology.
       </p>
 
       <p>
-        Still, I'm quite bullish on this direction, because most use cases
-        don't need an oracle. An oracle user model would solve essentially
-        everything, but in the imperfect reality we live in, I think it's more
-        useful to place use cases by how much individual-level data they
-        actually need:
+        Still, I'm quite excited on this direction, because most use cases
+        don't need an oracle. I think it's more useful to place use cases by
+        how much individual-level data they actually need:
       </p>
 
       <UserModelMap />
@@ -854,40 +823,33 @@ export default function ImpersonaEnv() {
         recall (what I usually buy, what I can't eat) plus a handful of general
         traits, like how cost-sensitive I am or how comfortable I am handing
         decisions to the agent. At the far right, therapy and emotional support
-        genuinely need individual-level data: the relevant state is
-        idiosyncratic and drifting, but it is also exactly the kind of state
-        that text messages record densely, which is what makes a user model
-        like the one in this post feasible there. For many other use cases on
-        that end of the scale, we simply don't record comparable data yet. It's
-        precisely because of this spread that I'm still bullish: a lot of use
-        cases don't need a perfect model of the person, and for the ones that
-        do, the question becomes whether the right data exists.
+        genuinely need individual-level data. Imo a lot of use cases don't need
+        a perfect model of the person, and for the ones that do, the question
+        becomes whether the right data exists.
       </p>
 
       <p>
-        That frames building user models as a sample-complexity question: for
-        each downstream application, <strong>how much individual data and how much live
-        context do you need before a personal model beats the population
-        prior?</strong> Some applications need very little, some a lot, and some may
-        never be reachable. Mapping that out, and building evals grounded in
-        the downstream tasks a user model actually helps with, is a research
-        direction I'm super excited to pursue. If you're thinking about any of
-        this, would love to chat:{' '}
-        <a href="mailto:benshi@stanford.edu">benshi@stanford.edu</a>.
+        So it frames building user models as a sample-complexity question: for
+        each downstream application,{' '}
+        <strong>
+          how much individual data and how much live context do you need
+          before a personal model beats the population prior?
+        </strong>{' '}
+        Some applications need very little, some a lot, and some may never be
+        reachable. Mapping that out, and building evals grounded in the
+        downstream tasks a user model actually helps with, is a research
+        direction I'm super excited to pursue.
       </p>
 
       <h2 id="acknowledgements">Acknowledgements</h2>
 
       <p>
-        Thank you to Hunter Lightman, Stephen Dong, Omar Shaikh, Jonathan Ward,
-        Victor Barres, Diyi Yang, Karthik Narasimhan, Daphne Ippolito, Sherry
-        Wu, Serina Chang and Daniel Fried for discussions that helped shape the
-        project. And thank you to{' '}
+        Thank you to Hunter Lightman, Stephen Dong, Omar Shaikh, Jonathan Ward
+        and Diyi Yang for discussions that helped shape the project. And thank you to{' '}
         <strong>
           <Ref href="https://modal.com">Modal</Ref>
         </strong>{' '}
-        for generously
-        sponsoring the compute for this exploration!
+        for generously sponsoring the compute for this exploration!
       </p>
 
       <h2 id="citation">Citation</h2>
@@ -897,7 +859,7 @@ export default function ImpersonaEnv() {
       <CiteBlock text={CITE_POST} />
 
       <p>
-        For the user model training method, can cite the original IMPersona
+        For the user model training method, can cite the original Impersona
         paper:
       </p>
 

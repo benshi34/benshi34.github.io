@@ -782,9 +782,10 @@ h2 {
   }
 }
 
-/* The hero breaks out of the 800px column without causing overflow. */
+/* The hero breaks out of the 800px column without causing overflow. 100vw
+   includes a visible scrollbar, so leave room for one. */
 .imp-theater-wrap {
-  width: 100vw;
+  width: calc(100vw - 17px);
   max-width: 1180px;
   position: relative;
   left: 50%;
@@ -840,6 +841,30 @@ h2 {
 
 .imp-col-log .imp-think {
   max-width: 88%;
+  font-size: 0.78rem;
+  color: #666666;
+}
+
+/* Feedback on the assistant's last reply, which is what becomes a
+   preference pair. */
+.imp-signal {
+  background-color: #fff1d6;
+  color: #7a4b00;
+  border-radius: 3px;
+  padding: 0 2px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.imp-signal-tag {
+  display: block;
+  margin-top: 0.25rem;
+  font-style: normal;
+  font-size: 0.62rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #b07300;
 }
 
 .imp-caption {
@@ -1402,13 +1427,25 @@ h2 {
   animation: pw-text-vis 3.2s infinite;
 }
 
-/* slide 2: the blind test */
+/* slide 2: the blind test, as one 6s sequence: question, reply, guess,
+   then the reveal of who actually sent the reply */
 .pw-ask {
-  animation: pw-in-early 4s infinite;
+  animation: pw-seq-ask 6s infinite;
 }
 
 .pw-answer {
-  animation: pw-in-late 4s infinite;
+  animation: pw-seq-answer 6s infinite;
+}
+
+.pw-guess {
+  margin-top: 4px;
+  font-size: 0.72rem;
+  color: #666666;
+  animation: pw-seq-guess 6s infinite;
+}
+
+.pw-guess strong {
+  color: #222222;
 }
 
 .pw-curtain {
@@ -1466,13 +1503,25 @@ h2 {
   opacity: 0.6;
 }
 
-/* each 4s exchange is routed to the other candidate */
-.pw-cand-a {
-  animation: pw-pick-a 8s infinite;
+.pw-candidates-label {
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #999999;
 }
 
-.pw-cand-b {
-  animation: pw-pick-b 8s infinite;
+.pw-cand-sent {
+  animation: pw-seq-reveal 6s infinite;
+}
+
+.pw-cand-note {
+  margin-left: auto;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  animation: pw-seq-note 6s infinite;
 }
 
 @keyframes pw-fade {
@@ -1523,27 +1572,34 @@ h2 {
   100% { opacity: 0; }
 }
 
-@keyframes pw-in-early {
+@keyframes pw-seq-ask {
   0% { opacity: 0; transform: translateY(4px); }
-  8%, 92% { opacity: 1; transform: none; }
+  6%, 94% { opacity: 1; transform: none; }
   100% { opacity: 0; }
 }
 
-@keyframes pw-in-late {
-  0%, 52% { opacity: 0; transform: translateY(4px); }
-  60%, 92% { opacity: 1; transform: none; }
+@keyframes pw-seq-answer {
+  0%, 22% { opacity: 0; transform: translateY(4px); }
+  28%, 94% { opacity: 1; transform: none; }
   100% { opacity: 0; }
 }
 
-@keyframes pw-pick-a {
-  0%, 46% { border-color: #0066cc; background-color: #f0f6ff; color: #0066cc; }
-  50%, 100% { border-color: #e6e6e6; background-color: #fafafa; color: #555555; }
+@keyframes pw-seq-guess {
+  0%, 46% { opacity: 0; }
+  52%, 94% { opacity: 1; }
+  100% { opacity: 0; }
 }
 
-@keyframes pw-pick-b {
-  0%, 46% { border-color: #e6e6e6; background-color: #fafafa; color: #555555; }
-  50%, 96% { border-color: #0066cc; background-color: #f0f6ff; color: #0066cc; }
+@keyframes pw-seq-reveal {
+  0%, 68% { border-color: #e6e6e6; background-color: #fafafa; color: #555555; }
+  74%, 94% { border-color: #0066cc; background-color: #f0f6ff; color: #0066cc; }
   100% { border-color: #e6e6e6; background-color: #fafafa; color: #555555; }
+}
+
+@keyframes pw-seq-note {
+  0%, 68% { opacity: 0; }
+  74%, 94% { opacity: 1; }
+  100% { opacity: 0; }
 }
 
 /* Reduced motion: no movement, every slide shows its finished state. */
@@ -1567,7 +1623,7 @@ h2 {
   display: none;
 }
 
-.pw-static .pw-cand-a {
+.pw-static .pw-cand-sent {
   border-color: #0066cc;
   background-color: #f0f6ff;
   color: #0066cc;
@@ -1747,6 +1803,17 @@ h2 {
   border: 1px solid #e6e6e6;
   border-radius: 10px;
   background-color: #fafafa;
+}
+
+/* an always-visible note: a slightly darker box set apart from body text */
+.post-body .post-note {
+  margin: 1.4rem 0 1.6rem 0;
+  padding: 0.9rem 1.1rem;
+  border-radius: 10px;
+  background-color: #f1f2f4;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: #4a4f57;
 }
 
 /* an aside inside a list item spans the full column, not the indented text */
@@ -2396,94 +2463,6 @@ h2 {
   letter-spacing: 0.07em;
   text-transform: uppercase;
   color: #b08a3e;
-}
-
-/* ---- inline definition tooltip ---- */
-
-.infotip {
-  position: relative;
-  display: inline-block;
-  margin: 0 0.1em 0 0.15em;
-  vertical-align: 0.12em;
-  line-height: 1;
-}
-
-.infotip-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 1.45em;
-  height: 1.45em;
-  padding: 0;
-  border: 1px solid #b8c7da;
-  border-radius: 50%;
-  background-color: #f5f8fc;
-  font: italic 600 0.64em/1 Georgia, 'Times New Roman', serif;
-  color: #4a6a8f;
-  cursor: help;
-  transition: border-color 0.15s ease, color 0.15s ease;
-}
-
-.infotip-btn:hover,
-.infotip-btn:focus-visible,
-.infotip-open .infotip-btn {
-  border-color: #0066cc;
-  color: #0066cc;
-}
-
-.infotip-bubble {
-  position: absolute;
-  bottom: calc(100% + 8px);
-  left: 50%;
-  z-index: 50;
-  width: max-content;
-  max-width: min(280px, 78vw);
-  padding: 8px 11px;
-  border-radius: 8px;
-  background-color: #2b2f36;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.14);
-  font-size: 0.8rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 1.45;
-  text-align: left;
-  color: #f4f5f7;
-  opacity: 0;
-  visibility: hidden;
-  transform: translate(calc(-50% + var(--infotip-shift, 0px)), 3px);
-  transition: opacity 0.12s ease, transform 0.12s ease, visibility 0.12s;
-  pointer-events: none;
-}
-
-.infotip-bubble::after {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: calc(50% - var(--infotip-shift, 0px));
-  border: 5px solid transparent;
-  border-top-color: #2b2f36;
-  transform: translateX(-50%);
-}
-
-.infotip:hover .infotip-bubble,
-.infotip-btn:focus-visible + .infotip-bubble,
-.infotip-open .infotip-bubble {
-  opacity: 1;
-  visibility: visible;
-  transform: translate(calc(-50% + var(--infotip-shift, 0px)), 0);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .infotip-bubble {
-    transition: none;
-  }
-}
-
-/* a defined term, paired with an InfoTip */
-.post-term {
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 0.18em;
 }
 
 /* quoted private thoughts from the user model */
