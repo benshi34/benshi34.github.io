@@ -24,7 +24,7 @@ export const meta = {
   affiliation: 'Stanford University',
   date: 'September 2026',
   description:
-    'In this post we demonstrate how to train better user models through data augmentation, and how to train better chatbots by utilizing the improved user model as a reward signal for training.',
+    'Impersona-env is a proof of concept to train personalized assistants by building an RL environment out of user models.',
 };
 
 const REFS = {
@@ -70,15 +70,15 @@ export default function ImpersonaEnv() {
       <div className="post-tldr">
         <p className="post-tldr-body">
           <span className="post-tldr-label">TLDR:</span>{' '}
-          In this post we demonstrate how to train better user models through
-          data augmentation, and how to train better chatbots by utilizing the
-          improved user model as a reward signal for training. Just like how a
-          human personal assistant learns from extensive trial and error +
-          feedback through assisting you in many different situations, a
-          chatbot can get the same trial and error and feedback from a{' '}
-          <em>simulation of you</em>, at a scale no real person could provide.
-          Our fine-tuned assistant (Qwen3.5-27B) matches a ~15x larger model
-          (Qwen3.5-397B) in a two-week blind test on my everyday queries.
+          <strong>Impersona-env</strong> is a proof of concept to{' '}
+          <strong>train personalized assistants</strong>{' '}
+          by building an <strong>RL environment out of user models</strong>. Your assistant
+          learns to help you by repeated asking a simulated version of you
+          questions, probing its internal latent thinking and feedback, and
+          updating its priors accordingly. I think this unlocks a new dimension
+          to personalization beyond discrete fact recall. My personal assistant
+          model now understands nuances of my preferences that even I didn't
+          know about.
         </p>
         <p className="post-tldr-contact">
           Please reach out at{' '}
