@@ -852,6 +852,13 @@ export default function ImpersonaEnv() {
         for generously sponsoring the compute for this exploration!
       </p>
 
+      <h2 id="code">Code</h2>
+
+      <p>
+        All of the code can be found here!{' '}
+        <Ref href="https://github.com/benshi34/impersona-env">[link]</Ref>
+      </p>
+
       <h2 id="citation">Citation</h2>
 
       <p>If you found this useful, feel free to cite this blog post!</p>
