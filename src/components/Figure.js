@@ -1,5 +1,5 @@
-function Figure({ src, alt = '', caption, align = 'center', width }) {
-  const className = `figure figure-${align}`;
+function Figure({ src, alt = '', caption, align = 'center', width, variant }) {
+  const className = `figure figure-${align}${variant ? ` figure-${variant}` : ''}`;
   const style = width ? { maxWidth: width } : undefined;
 
   return (

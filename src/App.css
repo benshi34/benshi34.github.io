@@ -642,11 +642,23 @@ h2 {
   flex-direction: column;
 }
 
-.figure img {
+.figure img,
+.figure video {
   width: 100%;
   height: auto;
   border-radius: 6px;
   display: block;
+}
+
+.figure video {
+  background-color: #000000;
+}
+
+/* App screenshots are cropped to the window, so round them off to hide the
+   window's own corners and outline the light grey against the page. */
+.figure-screenshot img {
+  border-radius: 11px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.06), 0 6px 20px rgba(0, 0, 0, 0.06);
 }
 
 .figure figcaption {
@@ -3190,4 +3202,102 @@ h2 {
   .sl-narrow {
     display: block;
   }
+}
+
+/* ---- Homecoming "Ask" answers drawn as app windows (axw-) ----
+   Each window is laid out 1440px wide like the screenshots, as tall as its
+   answer (790px at least), then scaled to fit: AskWindow sets --axw-height
+   and --axw-scale, so it looks the same at any width. */
+
+.axw-figure {
+  gap: 1.2rem;
+}
+
+.axw {
+  position: relative;
+  aspect-ratio: 1440 / var(--axw-height, 790);
+  overflow: hidden;
+  /* Keep mobile browsers from inflating the scaled-down text and rewrapping. */
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  background-color: #fdfdfc;
+  border-radius: 11px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.06), 0 6px 20px rgba(0, 0, 0, 0.06);
+}
+
+.axw-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1440px;
+  height: calc(var(--axw-height, 790) * 1px);
+  transform: scale(var(--axw-scale, 0.55));
+  transform-origin: top left;
+  color: #262626;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', sans-serif;
+  font-size: 22px;
+  line-height: 33px;
+}
+
+.axw-content {
+  padding: 27px 71px 0 209px;
+}
+
+.axw-question {
+  width: fit-content;
+  margin-left: auto;
+  padding: 10px 22px;
+  background-color: #0a7aff;
+  border-radius: 27px;
+  color: #ffffff;
+  font-size: 21px;
+}
+
+.axw-lookup {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 22px 0 16px 4px;
+  color: #808080;
+  font-size: 20px;
+}
+
+.axw-icon {
+  display: flex;
+  width: 18px;
+  height: 18px;
+}
+
+.axw-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.post-body .axw-content p {
+  max-width: 1100px;
+  margin: 0 0 18px;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.post-body .axw-content ul {
+  max-width: 1100px;
+  margin: 0 0 22px;
+  padding-left: 30px;
+}
+
+.post-body .axw-content li {
+  margin-bottom: 8px;
+}
+
+.axw-content strong {
+  font-weight: 600;
+}
+
+.axw-cite {
+  padding: 0 8px;
+  background-color: #e7effc;
+  border-radius: 6px;
+  color: #2f7be5;
+  font-size: 20px;
 }
