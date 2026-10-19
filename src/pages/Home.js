@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import confetti from 'canvas-confetti';
 import profileImage from '../new_profile.jpg';
 import Tabs from '../components/Tabs';
@@ -52,9 +53,17 @@ function Home() {
         In my free time I like to produce music and sing. I do not claim to be good at it.
       </p>
 
+      <p>
+        For recent work, please check out <Link to="/blog/homecoming">Homecoming</Link> and <Link to="/blog/impersona-env">Impersona-Env</Link>!
+      </p>
+
       <div className="recent-goings">
         <h2>Recently</h2>
         <div className="timeline">
+          <div className="timeline-item">
+            <span className="date">Oct '26</span>
+            <span className="event">Homecoming <Link to="/blog/homecoming">[link]</Link>, Impersona-Env <Link to="/blog/impersona-env">[link]</Link></span>
+          </div>
           <div className="timeline-item">
             <span className="date">Sep '26</span>
             <span className="event">τ<sup>τ</sup>-bench is out! See <a href="https://sierra.ai/fr/blog/hyper-t-bench-evaluating-agents-that-build-agents" target="_blank" rel="noopener noreferrer">blog</a></span>
@@ -66,10 +75,6 @@ function Home() {
           <div className="timeline-item">
             <span className="date">Oct '25</span>
             <span className="event">Check out new blog posts on <a href="https://sierra.ai/blog/voice-post-training" target="_blank" rel="noopener noreferrer">voice agent post training</a> and <a href="https://sierra.ai/blog/t-bench-leaderboard" target="_blank" rel="noopener noreferrer">τ-bench</a> authored by me.</span>
-          </div>
-          <div className="timeline-item">
-            <span className="date">Sep '25</span>
-            <span className="event"><a href="https://arxiv.org/abs/2506.05579" target="_blank" rel="noopener noreferrer">When Models Know More...</a> has been accepted to NeurIPS, and <a href="https://arxiv.org/abs/2504.04332" target="_blank" rel="noopener noreferrer">IMPersona</a> has been accepted to COLM 2025!</span>
           </div>
         </div>
       </div>
