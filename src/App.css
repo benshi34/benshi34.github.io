@@ -3207,7 +3207,8 @@ h2 {
 /* ---- Homecoming "Ask" answers drawn as app windows (axw-) ----
    Each window is laid out 1440px wide like the screenshots, as tall as its
    answer (790px at least), then scaled to fit: AskWindow sets --axw-height
-   and --axw-scale, so it looks the same at any width. */
+   and --axw-scale, so it looks the same at any width. Sizes are the app's own
+   (renderer/styles.css) at the 1.72x the screenshots show it at. */
 
 .axw-figure {
   gap: 1.2rem;
@@ -3235,8 +3236,8 @@ h2 {
   transform-origin: top left;
   color: #262626;
   font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', sans-serif;
-  font-size: 22px;
-  line-height: 33px;
+  font-size: 23px;
+  line-height: 35px;
 }
 
 .axw-content {
@@ -3275,19 +3276,23 @@ h2 {
 
 .post-body .axw-content p {
   max-width: 1100px;
-  margin: 0 0 18px;
+  margin: 0 0 15px;
   font-size: inherit;
   line-height: inherit;
 }
 
 .post-body .axw-content ul {
   max-width: 1100px;
-  margin: 0 0 22px;
-  padding-left: 30px;
+  margin: 0 0 15px;
+  padding-left: 34px;
 }
 
 .post-body .axw-content li {
-  margin-bottom: 8px;
+  margin-bottom: 0;
+}
+
+.post-body .axw-content li + li {
+  margin-top: 5px;
 }
 
 .axw-content strong {
@@ -3300,4 +3305,190 @@ h2 {
   border-radius: 6px;
   color: #2f7be5;
   font-size: 20px;
+}
+
+/* [[chat:…]]: a stretch of a conversation, as the app's ChatCard draws it. */
+.axw-chat {
+  width: 757px;
+  margin: 17px 0 21px;
+  overflow: hidden;
+  background-color: #ffffff;
+  border-radius: 31px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 10px 38px rgba(0, 0, 0, 0.06);
+}
+
+.axw-chat-head {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 21px 14px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.axw-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--tone) 60%, #fff), var(--tone));
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.08);
+  color: #ffffff;
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.axw-chat-who {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  line-height: 1.25;
+}
+
+.axw-chat-who b {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.axw-chat-who span {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 19px;
+}
+
+.axw-chat-chevron {
+  color: rgba(0, 0, 0, 0.26);
+}
+
+.axw-chat-body {
+  padding: 7px 21px 21px;
+}
+
+.axw-msg {
+  display: flex;
+  flex-direction: column;
+  margin-top: 3px;
+}
+
+.axw-msg.first {
+  margin-top: 14px;
+}
+
+.axw-msg.me {
+  align-items: flex-end;
+}
+
+.axw-msg.them {
+  align-items: flex-start;
+}
+
+.axw-bubble {
+  max-width: 82%;
+  padding: 10px 21px;
+  border-radius: 29px;
+  font-size: 23px;
+  line-height: 1.35;
+  white-space: pre-wrap;
+}
+
+.axw-bubble.me {
+  background-color: #007aff;
+  color: #ffffff;
+}
+
+.axw-bubble.them {
+  background-color: rgba(0, 0, 0, 0.09);
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.axw-msg-author {
+  margin: 0 0 3px 21px;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 19px;
+}
+
+.axw-msg-image {
+  width: 310px;
+  height: 232px;
+  margin-bottom: 3px;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 24px;
+}
+
+.axw-msg-image img,
+.axw-photos-grid img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.axw-reaction {
+  margin: 7px 41px;
+  color: rgba(0, 0, 0, 0.26);
+  font-size: 20px;
+  text-align: center;
+}
+
+.axw-chat-time {
+  margin: 3px 0 10px;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 19px;
+  text-align: center;
+}
+
+.axw-chat-foot {
+  padding: 0 24px 17px;
+  color: rgba(0, 0, 0, 0.26);
+  font-size: 19px;
+}
+
+/* [[photos:…]]: a few photos side by side, then where and when. */
+.axw-photos {
+  width: 757px;
+  margin: 17px 0 21px;
+}
+
+.axw-photos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+  overflow: hidden;
+  border-radius: 28px;
+}
+
+.axw-photos.n1 .axw-photos-grid {
+  grid-template-columns: 1fr;
+  max-width: 550px;
+}
+
+.axw-photos.n2 .axw-photos-grid {
+  grid-template-columns: 1fr 1fr;
+}
+
+.axw-photos-grid > div {
+  aspect-ratio: 1;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.axw-photos.n1 .axw-photos-grid > div {
+  aspect-ratio: 4 / 3;
+}
+
+.axw-photos-cap {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 10px 3px 0;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 20px;
+}
+
+.axw-photos-cap .axw-icon {
+  width: 21px;
+  height: 21px;
 }

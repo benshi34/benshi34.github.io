@@ -48,15 +48,14 @@ export default function Homecoming() {
       </p>
 
       <p>
-        So the goal became helping everyone collect and take control of their
-        entire digital footprint. I also think there&apos;s a cool problem here
-        about self-understanding. Interacting with your own digital footprint is
-        an interesting experience, and I&apos;m super interested in how people
-        interact with their own user models. That&apos;s what{' '}
-        <strong>Homecoming</strong> is: it brings your data home from your Mac,
-        your phone, and over 2,000 websites into one place, for you to explore
-        or train on. And all of it stays local on your Mac. When you ask it
-        something, the AI only sees what it looks up to answer you.
+        <strong>Homecoming</strong> is a desktop app that automatically
+        aggregates all your personal context across all applications that
+        you’ve accessed over your lifetime. It helps auto-request your data
+        packages from over 2000 supported websites, and manages them locally in
+        one place you can query, explore, and use for any downstream
+        application. All your messages, emails, tiktok scrolling activity,
+        goodreads, netflix, strava… even your 6th grade Wattpad account. You can
+        even explore the features companies use to target ads at you.
       </p>
 
       <h2 id="features">Some features</h2>
@@ -210,14 +209,15 @@ export default function Homecoming() {
             question={a.question}
             lookedUp={`Looked up ${a.lookups} things`}
             answer={a.answer}
+            embeds={a.embeds}
           />
         ))}
       </AskExample>
 
       <p>
-        I built Homecoming because as I&apos;m working on building stronger
-        personal user models, I&apos;m bottlenecked a lot on my data so it&apos;s
-        incredibly important to work on a strong data foundation. There are
+        I built Homecoming because as I’m working on building stronger personal
+        user models it’s incredibly important to work on a strong data
+        foundation. There are
         also some super interesting questions that come after that. If capturing
         your interactions with technology is this useful, maybe we should build
         experiences that capture more of them, in ways that give real signal
